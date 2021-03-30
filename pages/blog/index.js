@@ -46,6 +46,7 @@ export default Blog;
 
 export async function getStaticProps() {
     const allPosts = await getAllPosts();
+    
     return {
       props: {
         allPosts
