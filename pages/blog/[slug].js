@@ -25,7 +25,7 @@ export default function Post({ postData }) {
     return (
         <div className={styles.container}>
             <Head>
-                {/* <title>{postData.title}</title> */}
+                <title>{postData.title}</title>
                 <link rel='icon' href='/favicon.ico' />
             </Head>
 
@@ -35,7 +35,7 @@ export default function Post({ postData }) {
                 ) : (
                     <article className={blogStyles.article}>
                         <div className={blogStyles.postmeta}>
-                            {/* <h1 className={styles.title}>{postData.title}</h1> */}
+                            <h1 className={styles.title}>{postData.title}</h1>
                             <p>{formatDate(postData.date)}</p>
                             <img src={postData.featuredImage.node.sourceUrl} />
                         </div>
