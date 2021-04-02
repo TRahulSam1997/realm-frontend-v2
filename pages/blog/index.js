@@ -23,7 +23,7 @@ const Blog = ({ allPosts: { edges } }) => (
                         <div className={blogStyles.listitem__thumbnail}>
                             <figure>
                                 <img
-                                src={node.extraPostInfo.thumbImage.mediaItemUrl}
+                                src={node.extraPostInfo.thumbImage}
                                 alt={node.title}
                                 />
                             </figure>
@@ -46,7 +46,7 @@ export default Blog;
 
 export async function getStaticProps() {
     const allPosts = await getAllPosts();
-    
+
     return {
       props: {
         allPosts
