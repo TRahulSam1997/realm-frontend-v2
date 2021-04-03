@@ -58,10 +58,18 @@ export default function Post({ postData }) {
 export async function getStaticPaths() {
     const allPosts = await getAllPostsWithSlug();
 
-    return {
-        paths: allPosts.edges.map(({ node }) => `/blog/${node.slug}`) || [],
-        fallback: true
+    if (
+        allPosts &&
+        allPosts.edges !== null &&
+        allPosts.edges.node !== null &&
+        allPosts.edges.length > 0
+    ) {
+        return {
+            paths: allPosts.edges.map(({ node }) => `/blog/${node.slug}`) || [],
+            fallback: true
+        }
     }
+
 }
 
 export async function getStaticProps({ params }) {
