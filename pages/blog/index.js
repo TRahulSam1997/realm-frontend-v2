@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react'
-
-import { getAllPosts } from '../../lib/api';
+import client from '../../lib/apollo/client'
+import ALL_POSTS from '../../lib/queries/allposts'
+// import { getAllPosts } from '../../lib/api';
 
 import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';
@@ -45,11 +46,15 @@ const Blog = ({ allPosts: { edges } }) => (
 export default Blog;
 
 export async function getStaticProps() {
-    const allPosts = await getAllPosts();
+    // const allPosts = await getAllPosts();
+
+    const { data, loading, networkStatus } = await client.query({
+        query: ALL_POSTS
+    });
 
     return {
       props: {
-        allPosts
+        allPosts: data?.posts
       }
     };
   }
