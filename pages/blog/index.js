@@ -48,7 +48,7 @@ export default Blog;
 export async function getStaticProps() {
     // const allPosts = await getAllPosts();
 
-    const { data, loading, networkStatus } = await client.query({
+    const { data } = await client.query({
         query: ALL_POSTS
     });
 

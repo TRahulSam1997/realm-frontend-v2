@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
-
-import { getAllPostsWithSlug, getPost } from '../../lib/api';
+import client from '../../lib/apollo/client'
+import { getPost } from '../../lib/api';
+import POSTS_WITH_SLUGS from '../../lib/queries/allposts'
 
 import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';
@@ -56,16 +57,20 @@ export default function Post({ postData }) {
 }
 
 export async function getStaticPaths() {
-    const allPosts = await getAllPostsWithSlug();
+    // const allPosts = await getAllPostsWithSlug();
+
+    const { data } = await client.query({
+        query: POSTS_WITH_SLUGS
+    });
 
     if (
-        allPosts &&
-        allPosts.edges !== null &&
-        allPosts.edges.node !== null &&
-        allPosts.edges.length > 0
+        data?.posts &&
+        data?.posts.edges !== null &&
+        data?.posts.edges.node !== null &&
+        data?.posts.edges.length > 0
     ) {
         return {
-            paths: allPosts.edges.map(({ node }) => `/blog/${node.slug}`) || [],
+            paths: data?.posts.edges.map(({ node }) => `/blog/${node.slug}`) || [],
             fallback: true
         }
     }
