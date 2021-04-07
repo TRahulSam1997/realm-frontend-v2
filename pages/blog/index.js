@@ -3,7 +3,6 @@ import Link from 'next/link';
 import React from 'react'
 import client from '../../lib/apollo/client'
 import ALL_POSTS from '../../lib/queries/allposts'
-// import { getAllPosts } from '../../lib/api';
 
 import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';

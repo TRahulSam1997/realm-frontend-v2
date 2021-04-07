@@ -2,9 +2,8 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import client from '../../lib/apollo/client'
-import { getPost } from '../../lib/api';
 import POSTS_WITH_SLUGS from '../../lib/queries/allposts'
-
+import POST from '../../lib/queries/post'
 import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';
 
@@ -77,8 +76,15 @@ export async function getStaticPaths() {
 
 }
 
+
 export async function getStaticProps({ params }) {
-    const data = await getPost(params.slug);
+    const { data } = await client.query({
+        query: POST,
+            variables: {
+                id: params.slug,
+                idType: 'SLUG'
+            }
+        });
 
     return {
       props: {
