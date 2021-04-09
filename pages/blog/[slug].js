@@ -35,7 +35,7 @@ export default function Post({ postData }) {
                 ) : (
                     <article className={blogStyles.article}>
                         <div className={blogStyles.postmeta}>
-                            {/* <h1 className={styles.title}>{postData.title}</h1> */}
+                            <h1 className={styles.title}>{postData.title}</h1>
                             <p>{formatDate(postData.date)}</p>
                             <img src={postData.featuredImage.node.sourceUrl} />
                         </div>
