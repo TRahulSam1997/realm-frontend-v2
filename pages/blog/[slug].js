@@ -25,7 +25,7 @@ export default function Post({ postData }) {
     return (
         <div className={styles.container}>
             <Head>
-                {/* <title>{postData.title}</title> */}
+                <title>{postData.title}</title>
                 <link rel='icon' href='/favicon.ico' />
             </Head>
 
@@ -70,7 +70,7 @@ export async function getStaticPaths() {
     ) {
         return {
             paths: data?.posts.edges.map(({ node }) => `/blog/${node.slug}`) || [],
-            fallback: true
+            fallback: 'blocking'
         }
     }
 
