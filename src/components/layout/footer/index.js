@@ -1,3 +1,6 @@
+import { faFacebook, faTwitter, faInstagram, faLinkedin, faYoutube, faMedium } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 const Footer = () => {
     return (
         <footer className="relative bg-gray-300 pt-8 pb-6">
@@ -23,34 +26,41 @@ const Footer = () => {
         <div className="container mx-auto px-4">
             <div className="flex flex-wrap">
             <div className="w-full lg:w-6/12 px-4">
-                <h5 className="text-lg mt-0 mb-2 text-gray-700">
-                Find us on any of these platforms, we respond 1-2 business days.
-                </h5>
                 <div className="mt-6">
-                <button
-                    className="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                    type="button"
-                >
-                    <i className="flex fab fa-twitter"></i>
-                </button>
-                <button
-                    className="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                    type="button"
-                >
-                    <i className="flex fab fa-facebook-square"></i>
-                </button>
-                <button
-                    className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                    type="button"
-                >
-                    <i className="flex fab fa-dribbble"></i>
-                </button>
-                <button
-                    className="bg-white text-gray-900 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                    type="button"
-                >
-                    <i className="flex fab fa-github"></i>
-                </button>
+                    <div className="social-menu">
+                        <ul className="list-unstyled list-inline text-center">
+                            <li className="list-inline-item">
+                                <a className="btn-floating btn-facebook mx-1" href="https://www.facebook.com/">
+                                    <FontAwesomeIcon icon={faFacebook} />
+                                </a>
+                            </li>
+                            <li className="list-inline-item">
+                                <a className="btn-floating btn-twitter mx-1" href="https://twitter.com/explore">
+                                    <FontAwesomeIcon icon={faTwitter} />
+                                </a>
+                            </li>
+                            <li className="list-inline-item">
+                                <a className="btn-floating btn-instagram mx-1" href="https://www.instagram.com/realm.project/">
+                                    <FontAwesomeIcon icon={faInstagram} />
+                                </a>
+                            </li>
+                            <li className="list-inline-item">
+                                <a className="btn-floating btn-linkedin mx-1" href="https://www.linkedin.com/company/18713097/">
+                                    <FontAwesomeIcon icon={faLinkedin} />
+                                </a>
+                            </li>
+                            <li className="list-inline-item">
+                                <a className="btn-floating btn-youtube mx-1" href="https://www.youtube.com/rahulsam/">
+                                    <FontAwesomeIcon icon={faYoutube} />
+                                </a>
+                            </li>
+                            <li className="list-inline-item">
+                                <a className="btn-floating btn-medium mx-1" href="https://medium.com/@trahulsam/">
+                                    <FontAwesomeIcon icon={faMedium} />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div className="w-full lg:w-6/12 px-4">
