@@ -21,54 +21,38 @@ const Nav = () => {
         >
             <i className="material-icons">menu</i>
         </button>
-        <div
-            className="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
-            id="navigation"
-        >
             <div
-            className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto"
+                className="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
+                id="navigation"
             >
-            <Link href={'/blog/'}>
-                <a
-                    href="#"
-                    className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+                <div
+                    className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto"
                 >
-                    <span>Home</span>
-                </a>
-            </Link>
-
-            <a
-                href="#"
-                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-            >
-                <span>About</span>
-            </a>
-            <a
-                href="#"
-                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-            >
-                <span>Blog</span>
-            </a>
-            <a
-                href="#"
-                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-            >
-                <span>Gallery</span>
-            </a>
-            <a
-                href="#"
-                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-            >
-                <span>Products</span>
-            </a>
-            <a
-                href="#"
-                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-            >
-                <span>Contact Us</span>
-            </a>
+                    <Link href={'/blog/'}>
+                        <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                            <span>Essays</span>
+                        </a>
+                    </Link>
+                    <a
+                        href="#"
+                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+                    >
+                        <span>Newsletter</span>
+                    </a>
+                    <a
+                        href="#"
+                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+                    >
+                        <span>Membership</span>
+                    </a>
+                    <a
+                        href="#"
+                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+                    >
+                        <span>About</span>
+                    </a>
+                </div>
             </div>
-        </div>
         </nav>
 
     )
