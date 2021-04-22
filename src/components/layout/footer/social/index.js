@@ -10,21 +10,24 @@ export default function SocialIcons() {
     return (
         <Styles>
             <div className="row">
-                <div className="pr-3">
-                    <a href="https://twitter.com/trsam97">
-                        <FontAwesomeIcon icon={faFacebook} />
-                    </a>
-                </div>
-                <div className="pr-3">
-                    <a href="https://twitter.com/trsam97">
-                        <FontAwesomeIcon icon={faInstagram} />
-                    </a>
-                </div>
-                <div className="pr-3">
-                    <a href="https://twitter.com/trsam97">
-                        <FontAwesomeIcon icon={faTwitter} />
-                    </a>
-                </div>
+                <a href="https://www.facebook.com/">
+                    <FontAwesomeIcon icon={faFacebook} />
+                </a>
+                <a href="https://www.instagram.com/realm.project/">
+                    <FontAwesomeIcon icon={faInstagram} />
+                </a>
+                <a href="https://twitter.com/trsam97">
+                    <FontAwesomeIcon icon={faTwitter} />
+                </a>
+                <a href="https://www.linkedin.com/company/18713097/">
+                    <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+                <a href="https://www.youtube.com/rahulsam/">
+                    <FontAwesomeIcon icon={faYoutube} />
+                </a>
+                <a href="https://medium.com/@trahulsam/">
+                    <FontAwesomeIcon icon={faMedium} />
+                </a>
             </div>
         </Styles>
     )
