@@ -26,7 +26,7 @@ const Footer = () => {
         <div className="flex flex-wrap">
           <div className="w-full lg:w-6/12 px-4">
             <div className="mt-6">
-              <SocialIcons></SocialIcons>
+              <SocialIcons />
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
@@ -37,7 +37,7 @@ const Footer = () => {
                 </span>
                 <ul className="list-unstyled">
                   <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                    <a className="text-gray-700 hover:text-white font-semibold block pb-2 text-sm"
                         href="https://www.creative-tim.com/presentation">About Us
                     </a>
                   </li>

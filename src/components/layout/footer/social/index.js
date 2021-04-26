@@ -3,11 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components';
 
 const Styles = styled.div`
-    /* .center {
-    display: table;
-    width: 100%;
-    height: 100vh;
-    } */
 
     #social-test {
         display: table-cell;
@@ -20,21 +15,21 @@ const Styles = styled.div`
         }
 
         li {
-            color: rgba(167, 146, 129, 0.6);
+            color: rgba(243, 244, 246, 0.6);
             list-style-type: none;
             display: inline-block;
             width: 50px;
             height: 50px;
             line-height: 50px;
             padding: 1%;
-            border: 1px solid rgba(167, 146, 129, 0.4);
+            border: 1px solid rgba(243, 244, 246, 0.4);
             cursor: pointer;
             margin-left: 10px;
             margin-bottom: 20px;
             transition: ease .3s;
             &:hover {
-                color: rgba(167, 146, 129, 1);
-                border: 1px solid rgba(167, 146, 129, 1);
+                color: rgba(243, 244, 246, 1);
+                border: 1px solid rgba(243, 244, 246, 1);
             }
         }
     }
