@@ -10,33 +10,33 @@ const Styles = styled.div`
     } */
 
     #social-test {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 30px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 30px;
 
-    .social {
-        padding-left: 0px;
-    }
-
-    li {
-        color: rgba(167, 146, 129, 0.6);
-        list-style-type: none;
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-        padding: 1%;
-        border: 1px solid rgba(167, 146, 129, 0.4);
-        cursor: pointer;
-        margin-left: 10px;
-        margin-bottom: 20px;
-        transition: ease .3s;
-        &:hover {
-            color: rgba(167, 146, 129, 1);
-            border: 1px solid rgba(167, 146, 129, 1);
+        .social {
+            padding-left: 0px;
         }
-    }
+
+        li {
+            color: rgba(167, 146, 129, 0.6);
+            list-style-type: none;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            padding: 1%;
+            border: 1px solid rgba(167, 146, 129, 0.4);
+            cursor: pointer;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            transition: ease .3s;
+            &:hover {
+                color: rgba(167, 146, 129, 1);
+                border: 1px solid rgba(167, 146, 129, 1);
+            }
+        }
     }
 
     .social:hover > li {

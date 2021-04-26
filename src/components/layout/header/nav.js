@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const Nav = () => {
     return (
-        <nav className="flex items-center bg-gray-800 p-3 flex-wrap">
+        <nav className="flex items-center bg-gray-900 p-3 flex-wrap">
         <a href="#" className="p-2 mr-4 inline-flex items-center">
             <Link href="/">
 					<a>
@@ -11,7 +11,7 @@ const Nav = () => {
 			</Link>
         </a>
         <button
-            className="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
+            className="text-white inline-flex p-3 hover:bg-black rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
             data-target="#navigation"
         >
             <i className="material-icons">menu</i>
@@ -24,25 +24,25 @@ const Nav = () => {
                     className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto"
                 >
                     <Link href={'/blog/'}>
-                        <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                        <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-black hover:text-white">
                             <span>Essays</span>
                         </a>
                     </Link>
                     <a
                         href="#"
-                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-black hover:text-white"
                     >
                         <span>Newsletter</span>
                     </a>
                     <a
                         href="#"
-                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-black hover:text-white"
                     >
                         <span>Membership</span>
                     </a>
                     <a
                         href="#"
-                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-black hover:text-white"
                     >
                         <span>About</span>
                     </a>
