@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
       <Layout>
         <main className={styles.main}>
-          <h1 className={styles.title}>Welcome to our demo blog!</h1>
+          <h1 className={styles.title}>Living Truthfully</h1>
 
           <p>
             You can find more articles on the{' '}
