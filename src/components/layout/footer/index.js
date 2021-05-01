@@ -1,4 +1,5 @@
 import SocialIcons from './social/index'
+import EmailCollection from '../../email/emailCollection'
 
 const Footer = () => {
     return (
@@ -24,17 +25,18 @@ const Footer = () => {
       </div>
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap">
-          <div className="w-full lg:w-6/12 px-4">
+          <div className="w-full lg:w-4/12 px-4">
             <div className="mt-6">
               <SocialIcons />
             </div>
           </div>
-          <div className="w-full lg:w-6/12 px-4">
+          <div className="w-full lg:w-8/12 px-4">
             <div className="flex flex-wrap items-top mb-6">
               <div className="w-full lg:w-4/12 px-4 ml-auto">
                 <span className="block uppercase text-gray-600 text-sm font-semibold mb-2">
                   Useful Links
                 </span>
+                <EmailCollection />
                 <ul className="list-unstyled">
                   <li>
                     <a className="text-gray-700 hover:text-white font-semibold block pb-2 text-sm"
@@ -59,33 +61,11 @@ const Footer = () => {
 
                 </ul>
               </div>
-              <div className="w-full lg:w-4/12 px-4">
-                <span className="block uppercase text-gray-600 text-sm font-semibold mb-2">
-                  Other Resources
+              <div className="w-full lg:w-8/12 px-4">
+                <span className="text-white font-semibold block pb-2 text-sm">
+                  <h2 className="block uppercase text-sm font-semibold mb-2">Who are we?</h2>
+                  <p>REALM is a publication that uses psychology, philosophy & literature for self-improvement. Better people make better societies; our only goal is to help individuals live truthfully.</p>
                 </span>
-                <ul className="list-unstyled">
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md">MIT License
-                  </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/terms">Terms & Conditions
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/privacy">Privacy Policy
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/contact-us">Contact Us
-                    </a>
-                  </li>
-                </ul>
-
               </div>
             </div>
           </div>
@@ -94,12 +74,12 @@ const Footer = () => {
         <div className="flex flex-wrap items-center md:justify-between justify-center">
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
             <div className="text-sm text-gray-600 font-semibold py-1">
-              Copyright © {new Date().getFullYear()}{" "}Tailwind Starter Kit by{" "}
+              Copyright © {new Date().getFullYear()}{" "}Realm Project by{" "}
               <a
                 href="https://www.creative-tim.com"
                 className="text-gray-600 hover:text-gray-900"
               >
-                Creative Tim
+                REALM
               </a>.
             </div>
           </div>
