@@ -2,7 +2,12 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import Layout from '../src/components/layout'
-export default function Home() {
+import client from '../lib/apollo/client'
+import POSTS_FOR_HOME from '../lib/queries/postsForHome'
+import blogStyles from '../styles/Blog.module.css'
+
+
+export default function Home({ allPostsForHome: { edges } }) {
   return (
     <>
       <Head>
@@ -12,7 +17,27 @@ export default function Home() {
       <Layout>
         <main className={styles.main}>
           <h1 className={styles.title}>Living Truthfully</h1>
-
+            <section>
+                  {edges.map(({ node }) => (
+                      <div className={blogStyles.listitem} key={node.id}>
+                          <div className={blogStyles.listitem__thumbnail}>
+                              <figure>
+                                  <img
+                                  src={node.extraPostInfo.thumbImage}
+                                  alt={node.title}
+                                  />
+                              </figure>
+                          </div>
+                          <div className={blogStyles.listitem__content}>
+                              <h2>{node.title}</h2>
+                              <p>{node.extraPostInfo.authorExcerpt}</p>
+                              <Link href={`/blog/${node.slug}`}>
+                                  <a>Read more</a>
+                              </Link>
+                          </div>
+                      </div>
+                  ))}
+            </section>
           <p>
             You can find more articles on the{' '}
             <Link href='/blog'>
@@ -24,4 +49,19 @@ export default function Home() {
 
     </>
   )
+}
+
+export async function getStaticProps() {
+  // const allPosts = await getAllPosts();
+
+  const { data } = await client.query({
+      query: POSTS_FOR_HOME
+  });
+
+  return {
+    props: {
+      allPostsForHome: data?.posts
+    },
+    revalidate: 1
+  };
 }
