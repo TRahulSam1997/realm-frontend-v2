@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import Layout from '../src/components/layout'
 import client from '../lib/apollo/client'
-import POSTS_FOR_HOME from '../lib/queries/postsForHome'
+import POSTS_FOR_HOME from '../lib/queries/home/postsForHome'
 import blogStyles from '../styles/Blog.module.css'
 
 
