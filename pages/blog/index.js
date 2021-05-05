@@ -6,6 +6,7 @@ import ALL_POSTS from '../../lib/queries/allposts';
 import { PER_PAGE_FIRST } from '../../src/utils/pagination';
 import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';
+import LoadMorePosts from '../../src/components/blog/loadMorePosts';
 
 const Blog = ({ allPosts: { edges } }) => (
     <div className={styles.container}>
