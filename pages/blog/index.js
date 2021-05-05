@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import React from 'react'
-import client from '../../lib/apollo/client'
-import ALL_POSTS from '../../lib/queries/allposts'
-
+import React from 'react';
+import client from '../../lib/apollo/client';
+import ALL_POSTS from '../../lib/queries/allposts';
+import { PER_PAGE_FIRST } from '../../src/utils/pagination';
 import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';
 
@@ -50,7 +50,7 @@ export async function getStaticProps() {
     const { data } = await client.query({
         query: ALL_POSTS,
         variables: {
-			first: 3,
+			first: PER_PAGE_FIRST,
 			after: null,
 		}
     });
