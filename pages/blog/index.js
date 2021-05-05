@@ -48,7 +48,11 @@ export async function getStaticProps() {
     // const allPosts = await getAllPosts();
 
     const { data } = await client.query({
-        query: ALL_POSTS
+        query: ALL_POSTS,
+        variables: {
+			first: 3,
+			after: null,
+		}
     });
 
     return {
