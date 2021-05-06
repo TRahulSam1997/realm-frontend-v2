@@ -3,14 +3,13 @@ import client from '../../lib/apollo/client';
 import ALL_POSTS from '../../lib/queries/allposts';
 import { PER_PAGE_FIRST } from '../../src/utils/pagination';
 import LoadMorePosts from '../../src/components/blog/loadMorePosts';
+import Layout from '../../src/components/layout/index'
 
 const Blog = ({ allPosts: posts  }) => {
   return (
-    <div>
-        <LoadMorePosts posts={posts}>
-
-        </LoadMorePosts>
-    </div>
+    <Layout>
+        <LoadMorePosts posts={posts} />
+    </Layout>
 
   )
 };
