@@ -3,7 +3,7 @@ import blogStyles from '../../../styles/Blog.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const Posts = ( {edges} ) => {
+const Posts = ( { edges } ) => {
     // if ( isEmpty( edges ) && ! isArray( edges ) ) {
 	// 	return null;
 	// }
