@@ -4,13 +4,16 @@ import ALL_POSTS from '../../lib/queries/allposts';
 import { PER_PAGE_FIRST } from '../../src/utils/pagination';
 import LoadMorePosts from '../../src/components/blog/loadMorePosts';
 
-const Blog = ({ allPosts: { edges } }) => (
+const Blog = ({ allPosts: posts  }) => {
+  return (
     <div>
-        <LoadMorePosts edges={edges}>
+        <LoadMorePosts posts={posts}>
 
         </LoadMorePosts>
     </div>
-);
+
+  )
+};
 
 export default Blog;
 

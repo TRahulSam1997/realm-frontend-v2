@@ -1,9 +1,9 @@
 import Posts from '../../components/blog/posts';
 
-const LoadMorePosts = ( {edges} ) => {
+const LoadMorePosts = ( {posts} ) => {
     return (
         <>
-            <Posts edges={edges}/>
+            <Posts edges={posts.edges}/>
         </>
     )
 }
