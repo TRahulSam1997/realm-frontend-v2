@@ -2,11 +2,13 @@ import styles from '../../../styles/Home.module.css';
 import blogStyles from '../../../styles/Blog.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
+import {isEmpty, isArray} from 'lodash';
+import PropTypes from 'prop-types';
 
 const Posts = ( { edges } ) => {
-    // if ( isEmpty( edges ) && ! isArray( edges ) ) {
-	// 	return null;
-	// }
+    if ( isEmpty( edges ) && ! isArray( edges ) ) {
+		return null;
+	}
 
     return (
         <div className={styles.container}>
@@ -43,5 +45,13 @@ const Posts = ( { edges } ) => {
         </div>
     )
 }
+
+Posts.propTypes = {
+	posts: PropTypes.array
+};
+
+Posts.defaultProps = {
+	posts: []
+};
 
 export default Posts;
