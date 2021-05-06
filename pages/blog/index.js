@@ -1,6 +1,6 @@
 import React from 'react';
 import client from '../../lib/apollo/client';
-import ALL_POSTS from '../../lib/queries/allposts';
+import ALL_POSTS from '../../lib/queries/blog/allposts';
 import { PER_PAGE_FIRST } from '../../src/utils/pagination';
 import LoadMorePosts from '../../src/components/blog/loadMorePosts';
 import Layout from '../../src/components/layout/index'
