@@ -2,8 +2,8 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import client from '../../lib/apollo/client'
-import POSTS_WITH_SLUGS from '../../lib/queries/allposts'
-import POST from '../../lib/queries/post'
+import POSTS_WITH_SLUGS from '../../lib/queries/blog/postswithslugs'
+import POST from '../../lib/queries/blog/post'
 import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';
 import styled from 'styled-components';
