@@ -39,7 +39,7 @@ const LoadMorePosts = ( { posts } ) => {
      *
      * @param {String} endCursor Endcursor used to fetch the next set of posts.
      */
-    
+
     const loadMoreItems = ( endCursor = null ) => {
 
 		fetchPosts( {
@@ -64,7 +64,7 @@ const LoadMorePosts = ( { posts } ) => {
 					) : (
 						<button
 							className='flex items-center bg-gray-100 hover:bg-gray-600 hover:text-white transition-colors duration-500 border border-gray-500 px-4 py-3'
-							onClick={() => loadMoreItems( endCursor )}
+							onClick={() => loadMoreItems( endCursor ), () => {console.log(endCursor)}}
 						>
                             Load more
 						</button>
