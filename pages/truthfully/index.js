@@ -5,6 +5,7 @@ const Truthfully = ({ allPosts: posts  }) => {
   return (
     <Layout>
         <h1>What is Living Truthfully?</h1>
+        <div><p>Test Test</p></div>
     </Layout>
 
   )
