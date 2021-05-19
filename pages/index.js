@@ -5,7 +5,7 @@ import Layout from '../src/components/layout'
 import client from '../lib/apollo/client'
 import POSTS_FOR_HOME from '../lib/queries/home/postsForHome'
 import blogStyles from '../styles/Blog.module.css'
-
+import EmailCollection from '../src/components/email/emailCollection'
 
 export default function Home({ allPostsForHome: { edges } }) {
   return (
@@ -17,6 +17,7 @@ export default function Home({ allPostsForHome: { edges } }) {
       <Layout>
         <main className={styles.main}>
           <h1 className={styles.title}>Living Truthfully</h1>
+            <EmailCollection />
             <section>
                   {edges.map(({ node }) => (
                       <div className={blogStyles.listitem} key={node.id}>
