@@ -62,12 +62,13 @@ const LoadMorePosts = ( { posts } ) => {
                             Loading...
 						</div>
 					) : (
-						<button
-							className='flex items-center bg-gray-100 hover:bg-gray-600 hover:text-white transition-colors duration-500 border border-gray-500 px-4 py-3'
-							onClick={() => loadMoreItems( endCursor ), () => {console.log(endCursor)}}
-						>
-                            Load more
-						</button>
+						<> </>
+						// <button
+						// 	className='flex items-center bg-gray-100 hover:bg-gray-600 hover:text-white transition-colors duration-500 border border-gray-500 px-4 py-3'
+						// 	onClick={() => loadMoreItems( endCursor ), () => {console.log(endCursor)}}
+						// >
+                        //     Load more
+						// </button>
 					)}
 				</div>
 			) : null}

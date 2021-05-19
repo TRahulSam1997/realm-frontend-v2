@@ -1,1 +1,1 @@
-export const PER_PAGE_FIRST = 3;
+export const PER_PAGE_FIRST = 50;
