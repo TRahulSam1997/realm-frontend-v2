@@ -1,5 +1,5 @@
 import SocialIcons from './social/index'
-import EmailCollectionFooter from '../../email/emailCollection'
+import EmailCollectionFooter from '../../email/emailCollectionFooter'
 
 const Footer = () => {
     return (
