@@ -1,5 +1,5 @@
 import SocialIcons from './social/index'
-import EmailCollection from '../../email/emailCollection'
+import EmailCollectionFooter from '../../email/emailCollection'
 
 const Footer = () => {
     return (
@@ -36,7 +36,7 @@ const Footer = () => {
                 <span className="block uppercase text-gray-600 text-sm font-semibold mb-2">
                   Useful Links
                 </span>
-                <EmailCollection />
+                <EmailCollectionFooter />
                 <ul className="list-unstyled">
                   <li>
                     <a className="text-gray-700 hover:text-white font-semibold block pb-2 text-sm"
