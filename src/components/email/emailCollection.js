@@ -31,7 +31,7 @@ const EmailCollection = () => {
 
         // 5. Clear the input value and show a success message.
         inputEl.current.value = '';
-        setMessage('Success! 🎉 You are now subscribed to the newsletter.');
+        setMessage('Success! You are now subscribed to our Newsletter.');
       };
 
     return (
@@ -50,9 +50,9 @@ const EmailCollection = () => {
         <div>
             {message
             ? message
-            : `I'll only send emails when new content is posted. No spam.`}
+            : `New content, snippets, findings & more.`}
         </div>
-        <button type="submit">{'✨ Subscribe 💌'}</button>
+        <button type="submit">{'Subscribe'}</button>
         </form>
     </>
     )
