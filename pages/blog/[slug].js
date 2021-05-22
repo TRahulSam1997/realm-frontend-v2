@@ -7,6 +7,7 @@ import POST from '../../lib/queries/blog/post'
 import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';
 import styled from 'styled-components';
+import Layout from '../../src/components/layout/index'
 
 const Styles = styled.div`
     .tooltip {
@@ -66,36 +67,37 @@ export default function Post({ postData }) {
 
     return (
         <Styles>
-            <div className={styles.container}>
-                <Head>
-                    <title>{postData.title}</title>
-                    <link rel='icon' href='/favicon.ico' />
-                </Head>
+            <Layout>
+                <div className={styles.container}>
+                    <Head>
+                        <title>{postData.title}</title>
+                        <link rel='icon' href='/favicon.ico' />
+                    </Head>
 
-                <main className={styles.main}>
-                    {router.isFallback ? (
-                        <h2>Loading...</h2>
-                    ) : (
-                        <article className={blogStyles.article}>
-                            <div className={blogStyles.postmeta}>
-                                <h1 className={styles.title}>{postData.title}</h1>
-                                <p>{formatDate(postData.date)}</p>
-                                <img src={postData.featuredImage.node.sourceUrl} />
-                            </div>
-                            <div
-                                className='post-content content'
-                                dangerouslySetInnerHTML={{ __html: postData.content }}
-                            />
-                        </article>
-                    )}
-                    <p>
-                        <Link href={`/blog`}>
-                            <a>Back</a>
-                        </Link>
-                    </p>
-                </main>
-            </div>
-
+                    <main className={styles.main}>
+                        {router.isFallback ? (
+                            <h2>Loading...</h2>
+                        ) : (
+                            <article className={blogStyles.article}>
+                                <div className={blogStyles.postmeta}>
+                                    <h1 className={styles.title}>{postData.title}</h1>
+                                    <p>{formatDate(postData.date)}</p>
+                                    <img src={postData.featuredImage.node.sourceUrl} />
+                                </div>
+                                <div
+                                    className='post-content content'
+                                    dangerouslySetInnerHTML={{ __html: postData.content }}
+                                />
+                            </article>
+                        )}
+                        <p>
+                            <Link href={`/blog`}>
+                                <a>Back</a>
+                            </Link>
+                        </p>
+                    </main>
+                </div>
+            </Layout>
         </Styles>
     )
 }
