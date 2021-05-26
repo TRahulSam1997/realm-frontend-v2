@@ -23,28 +23,28 @@ export default function Home({ allPostsForHome: { edges } }) {
                     <main className="mt-10">
                       <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
                         <div className="w-full lg:w-2/3" key={node.id}>
-                        <a className="block rounded w-full lg:flex mb-10">
-                          <div
-                              className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
-                              styles={{backgroundImage: `url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')`}}
-                            >
-                              {/* <div className={blogStyles.listitem__thumbnail}>
-                                  <figure>
-                                      <img
-                                      src={node.extraPostInfo.thumbImage}
-                                      alt={node.title}
-                                      />
-                                  </figure>
-                              </div> */}
-                              <div className={blogStyles.listitem__content}>
-                                  <h2>{node.title}</h2>
-                                  <p>{node.extraPostInfo.authorExcerpt}</p>
-                                  <Link href={`/blog/${node.slug}`}>
-                                      <a>Read more</a>
-                                  </Link>
-                              </div>
-                          </div>
-                        </a>
+                          <a className="block rounded w-full lg:flex mb-10">
+                            <div
+                                className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
+                                style={{backgroundImage: `url(${node.extraPostInfo.thumbImage})`}}
+                              >
+                                {/* <div className={blogStyles.listitem__thumbnail}>
+                                    <figure>
+                                        <img
+                                        src={node.extraPostInfo.thumbImage}
+                                        alt={node.title}
+                                        />
+                                    </figure>
+                                </div> */}
+                                <div className={blogStyles.listitem__content}>
+                                    <h2>{node.title}</h2>
+                                    <p>{node.extraPostInfo.authorExcerpt}</p>
+                                    <Link href={`/blog/${node.slug}`}>
+                                        <a>Read more</a>
+                                    </Link>
+                                </div>
+                            </div>
+                          </a>
                         </div>
                       </div>
                     </main>
