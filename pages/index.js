@@ -16,7 +16,9 @@ export default function Home({ allPostsForHome: { edges } }) {
       <Layout>
         <main className={styles.main}>
           <h1>Living Truthfully</h1>
-            <EmailCollection />
+            <div className="w-4/6 h-72">
+              <EmailCollection />
+            </div>
             <section className="max-w-screen-xl mx-auto">
                   {edges.map(({ node }) => (
                     <main className="mt-10" key={node.id}>
