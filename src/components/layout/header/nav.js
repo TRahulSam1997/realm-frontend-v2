@@ -24,24 +24,24 @@ const Nav = () => {
                     className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto"
                 >
                     <Link href={'/blog/'}>
-                        <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-black hover:text-white">
+                        <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white">
                             <span>Essays</span>
                         </a>
                     </Link>
                     <a
                         href="#"
-                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-black hover:text-white"
+                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
                     >
                         <span>Newsletter</span>
                     </a>
                     <a
                         href="#"
-                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-black hover:text-white"
+                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
                     >
                         <span>Membership</span>
                     </a>
                     <Link href={'/truthfully/'}>
-                        <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-black hover:text-white">
+                        <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white">
                             <span>Living Truthfully</span>
                         </a>
                     </Link>
