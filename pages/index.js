@@ -14,7 +14,7 @@ export default function Home({ allPostsForHome: { edges } }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <main className="h-screen space-y-4">
+        <main className={styles.main}>
           <h1>Living Truthfully</h1>
             <EmailCollection />
             <section className="max-w-screen-xl mx-auto">
