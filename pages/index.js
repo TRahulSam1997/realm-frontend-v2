@@ -18,14 +18,14 @@ export default function Home({ allPostsForHome: { edges } }) {
           <h1 className="md:text-7xl p-20 italic font-bold text-gray-900 dark:text-gray-100">
             Living Truthfully
           </h1>
-          <div className="w-4/6 h-72">
+          <div className="w-5/6 h-72">
             <EmailCollection />
           </div>
-          <section className="max-w-screen-xl mx-auto">
+          <section className="w-4/6">
                 {edges.map(({ node }) => (
                   <main className="mt-10" key={node.id}>
                     <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10" key={node.id}>
-                      <div className="w-2/3" key={node.id}>
+                      <div className="w-3/3" key={node.id}>
                         <Link href={`/blog/${node.slug}`}>
                           <a className="block rounded w-full lg:flex mb-10">
                             <div
