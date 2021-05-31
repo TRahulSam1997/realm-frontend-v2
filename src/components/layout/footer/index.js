@@ -1,5 +1,6 @@
 import SocialIcons from './social/index'
 import EmailCollectionFooter from '../../email/emailCollectionFooter'
+import Link from 'next/link'
 
 const Footer = () => {
     return (
@@ -36,24 +37,32 @@ const Footer = () => {
                 <EmailCollectionFooter />
                 <ul className="list-unstyled">
                   <li>
-                    <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
-                        href="https://www.creative-tim.com/presentation">About
-                    </a>
+                    <Link href={'/about/'}>
+                      <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white">
+                        About
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
-                        href="https://blog.creative-tim.com">Membership
-                    </a>
+                    <Link href={'/membership/'}>
+                      <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white">
+                        Membership
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
-                        href="https://www.github.com/creativetimofficial">Living Truthfully
-                    </a>
+                    <Link href={'/truthfully/'}>
+                      <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
+                      >Living Truthfully
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
-                        href="https://www.creative-tim.com/bootstrap-themes/free">Essays
-                    </a>
+                    <Link href={'/blog/'}>
+                      <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
+                      >Essays
+                      </a>
+                    </Link>
                   </li>
 
                 </ul>

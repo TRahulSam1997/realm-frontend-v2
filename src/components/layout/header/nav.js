@@ -28,18 +28,16 @@ const Nav = () => {
                             <span>Essays</span>
                         </a>
                     </Link>
-                    <a
-                        href="#"
-                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
-                    >
-                        <span>Newsletter</span>
-                    </a>
-                    <a
-                        href="#"
-                        className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
-                    >
-                        <span>Membership</span>
-                    </a>
+                    <Link href={'/membership/'}>
+                        <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white">
+                            <span>Membership</span>
+                        </a>
+                    </Link>
+                    <Link href={'/newsletter/'}>
+                        <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white">
+                            <span>Newsletter</span>
+                        </a>
+                    </Link>
                     <Link href={'/truthfully/'}>
                         <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white">
                             <span>Living Truthfully</span>

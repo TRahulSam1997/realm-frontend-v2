@@ -21,7 +21,11 @@ export default function Home({ allPostsForHome: { edges } }) {
           <div className="w-5/6 h-72">
             <EmailCollection />
           </div>
-          <section className="w-4/6 mt-20 mb-20">
+          <h1 className="md:text-xl mt-20 mb-2 text-transform: uppercase text-gray-600 dark:text-gray-100">
+            Recent Essays
+          </h1>
+          <section className="w-4/6 mb-20">
+                <hr></hr>
                 {edges.map(({ node }) => (
                   <main className="mt-10" key={node.id}>
                     <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10" key={node.id}>
@@ -60,13 +64,15 @@ export default function Home({ allPostsForHome: { edges } }) {
                     </div>
                   </main>
                 ))}
+            <p className="text-center mb-2">
+              <Link href='/blog/'>
+                <a className="md:text-xl text-transform: uppercase text-gray-600 hover:text-gray-900 dark:text-gray-100">
+                  <span>Read More</span>
+                </a>
+              </Link>
+            </p>
+            <hr></hr>
           </section>
-          <p>
-            You can find more articles on the{' '}
-            <Link href='/blog'>
-            <a>blog articles page</a>
-            </Link>
-          </p>
         </main>
       </Layout>
 
