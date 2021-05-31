@@ -32,39 +32,36 @@ const Footer = () => {
           </div>
           <div className="w-full lg:w-8/12 px-4">
             <div className="flex flex-wrap items-top mb-6">
-              <div className="w-full lg:w-4/12 px-4 ml-auto">
-                <span className="block uppercase text-gray-600 text-sm font-semibold mb-2">
-                  Useful Links
-                </span>
+              <div className="w-full lg:w-5/12 px-4 ml-auto">
                 <EmailCollectionFooter />
                 <ul className="list-unstyled">
                   <li>
-                    <a className="text-gray-700 hover:text-white font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/presentation">About Us
+                    <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
+                        href="https://www.creative-tim.com/presentation">About
                     </a>
                   </li>
                   <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://blog.creative-tim.com">Blog
+                    <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
+                        href="https://blog.creative-tim.com">Membership
                     </a>
                   </li>
                   <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://www.github.com/creativetimofficial">Github
+                    <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
+                        href="https://www.github.com/creativetimofficial">Living Truthfully
                     </a>
                   </li>
                   <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/bootstrap-themes/free">Free Products
+                    <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-black hover:text-white"
+                        href="https://www.creative-tim.com/bootstrap-themes/free">Essays
                     </a>
                   </li>
 
                 </ul>
               </div>
-              <div className="w-full lg:w-8/12 px-4">
+              <div className="w-full lg:w-7/12 px-4">
                 <span className="text-white font-semibold block pb-2 text-sm">
                   <h2 className="block uppercase text-sm text-gray-300 font-semibold mb-2">Who are we?</h2>
-                  <p className="text-gray-300" >REALM is a publication that uses psychology, philosophy & literature for self-improvement. Better people make better societies; our only goal is to help individuals live truthfully.</p>
+                  <p className="text-gray-300" >REALM explores psychology, philosophy & literature aimed towards virtue. Better people make better societies; our only goal is to help individuals live truthfully.</p>
                 </span>
               </div>
             </div>

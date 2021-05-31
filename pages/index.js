@@ -21,7 +21,7 @@ export default function Home({ allPostsForHome: { edges } }) {
           <div className="w-5/6 h-72">
             <EmailCollection />
           </div>
-          <section className="w-4/6">
+          <section className="w-4/6 mt-20 mb-20">
                 {edges.map(({ node }) => (
                   <main className="mt-10" key={node.id}>
                     <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10" key={node.id}>
