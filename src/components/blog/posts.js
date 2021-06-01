@@ -16,8 +16,7 @@ const Posts = ( { edges } ) => {
             </Head>
 
             <main className={styles.main}>
-                <section className="w-4/6 mb-20">
-                    <hr />
+                <section className="w-4/6 mb-20 mt-20">
                     {edges.map(({ node }) => (
                         <main className="mt-10" key={node.id}>
                             <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10" key={node.id}>
