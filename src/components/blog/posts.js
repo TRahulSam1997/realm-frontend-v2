@@ -1,5 +1,4 @@
 import styles from '../../../styles/Home.module.css';
-import blogStyles from '../../../styles/Blog.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
 import {isEmpty, isArray} from 'lodash';
@@ -9,36 +8,53 @@ const Posts = ( { edges } ) => {
     if ( isEmpty( edges ) && ! isArray( edges ) ) {
 		return null;
 	}
-
     return (
         <div className={styles.container}>
             <Head>
-                <title>Blog articles page</title>
+                <title>Essays</title>
                 <link rel='icon' href='/favicon.ico' />
             </Head>
 
             <main className={styles.main}>
-                <h1 className={styles.title}>Latest blog articles</h1>
-                <hr />
-                <section>
+                <section className="w-4/6 mb-20">
+                    <hr />
                     {edges.map(({ node }) => (
-                        <div className={blogStyles.listitem} key={node.id}>
-                            <div className={blogStyles.listitem__thumbnail}>
-                                <figure>
-                                    <img
-                                    src={node.extraPostInfo.thumbImage}
-                                    alt={node.title}
-                                    />
-                                </figure>
+                        <main className="mt-10" key={node.id}>
+                            <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10" key={node.id}>
+                                <div className="w-3/3" key={node.id}>
+                                    <Link href={`/blog/${node.slug}`}>
+                                    <a className="block rounded w-full lg:flex mb-10">
+                                        <div
+                                            className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-85"
+                                            style={{backgroundImage: `url(${node.extraPostInfo.thumbImage})`}}
+                                            title={node.title}
+                                        >
+                                        </div>
+                                        <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal">
+                                            <div
+                                                className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2"
+                                            >
+                                                {node.title}
+                                            </div>
+                                            <p
+                                                className="text-gray-700 text-base"
+                                            >
+                                                {node.extraPostInfo.authorExcerpt}
+                                            </p>
+                                            <div className="flex mt-3">
+                                                <img src="https://res.cloudinary.com/dkd4xa60a/image/upload/v1622025941/REALM/istockphoto-1016744034-612x612_ajt0jr.jpg"
+                                                    className="h-10 w-10 rounded-full mr-2 object-cover" />
+                                                <div>
+                                                    <p className="font-semibold text-gray-700 text-sm capitalize"> {node.author.node.name} </p>
+                                                    <p className="text-gray-600 text-xs">{(node.date).split('T')[0]} </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </Link>
+                                </div>
                             </div>
-                            <div className={blogStyles.listitem__content}>
-                                <h2>{node.title}</h2>
-                                <p>{node.extraPostInfo.authorExcerpt}</p>
-                                <Link href={`/blog/${node.slug}`}>
-                                    <a>Read more</a>
-                                </Link>
-                            </div>
-                        </div>
+                        </main>
                     ))}
                 </section>
             </main>
