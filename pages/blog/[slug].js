@@ -10,44 +10,100 @@ import styled from 'styled-components';
 import Layout from '../../src/components/layout/index'
 
 const Styles = styled.div`
-    .tooltip {
-        position: relative;
-        display: inline-block;
-        border-bottom: 1px dotted black;
+
+    .blogPostBodyText {
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        width: 100%;
+        display: block;
+        font-size: 21px;
+        text-align: left;
+        text-justify: inter-word;
+        padding-top: 0.6em;
+        padding-bottom: 0.2em;
+        /* font-family: libre baskerville, serif; */
+        color: black;
+
+        blockquote {
+            font-family: libre baskerville,serif;
+            font-style: italic;
+            width: inherit;
+            margin: 0.25em 0;
+            padding-left: 15px;
+            /* padding: 0px 0px; */
+            line-height: 1.45;
+            position: relative;
+            color: #747474;
+            border-left:5px solid #384d48;
+        }
+
+        .wp-block-separator {
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+        h3 {
+            padding-top: 2em;
+            padding-bottom: 2em;
+            text-align: left;
+            font-weight: bold;
+            border: solid #dc3545 0.25em;
+        }
+
+        .wp-block-image {
+            display: table;
+            margin: 0 auto;
+        }
+
+        ol {
+            list-style-type: numbers;
+        }
+
+        p {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
     }
 
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        width: 120px;
-        background-color: #555;
-        color: #fff;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px 0;
-        position: absolute;
-        z-index: 1;
-        bottom: 125%;
-        left: 50%;
-        margin-left: -60px;
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
 
-    .tooltip .tooltiptext::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: #555 transparent transparent transparent;
-    }
 
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-        opacity: 1;
-    }
 `;
 
 export default function Post({ postData }) {
@@ -78,14 +134,20 @@ export default function Post({ postData }) {
                         {router.isFallback ? (
                             <h2>Loading...</h2>
                         ) : (
-                            <article className={blogStyles.article}>
+                            <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
                                 <div className={blogStyles.postmeta}>
-                                    <h1 className={styles.title}>{postData.title}</h1>
-                                    <p>{formatDate(postData.date)}</p>
+                                    <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+                                        {postData.title}
+                                    </h1>
+                                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
+                                        <p className="text-sm text-gray-700 dark:text-gray-300 ml-2">
+                                            {formatDate(postData.date)}
+                                        </p>
+                                    </div>
                                     <img src={postData.featuredImage.node.sourceUrl} />
                                 </div>
                                 <div
-                                    className='post-content content'
+                                    className="blogPostBodyText"
                                     dangerouslySetInnerHTML={{ __html: postData.content }}
                                 />
                             </article>
