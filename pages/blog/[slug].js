@@ -9,6 +9,7 @@ import blogStyles from '../../styles/Blog.module.css';
 import styled from 'styled-components';
 import Layout from '../../src/components/layout/index'
 import { parseISO, format } from 'date-fns';
+import Image from 'next/image';
 
 const Styles = styled.div`
 
@@ -134,7 +135,14 @@ export default function Post({ postData }) {
                                     </h1>
                                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
                                         <div className="flex items-center">
-                                            <p className="text-base text-gray-700">
+                                            <Image
+                                            alt={postData.author.node.name}
+                                            height={24}
+                                            width={24}
+                                            src="https://res.cloudinary.com/dkd4xa60a/image/upload/v1622025941/REALM/istockphoto-1016744034-612x612_ajt0jr.jpg"
+                                            className="rounded-full"
+                                            />
+                                            <p className="text-base text-gray-700 ml-1">
                                                 {postData.author.node.name} {`/`} {format(parseISO(postData.date), 'MMMM dd, yyyy')}
                                             </p>
                                         </div>
