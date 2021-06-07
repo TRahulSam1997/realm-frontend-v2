@@ -15,7 +15,7 @@ const Styles = styled.div`
     .blogPostBodyText {
         width: 100%;
         display: block;
-        font-size: 21px;
+        font-size: 19px;
         text-align: left;
         text-justify: inter-word;
         padding-top: 0.6em;
@@ -129,17 +129,20 @@ export default function Post({ postData }) {
                         ) : (
                             <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
                                 <div className={blogStyles.postmeta}>
-                                    <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+                                    <h1 className="font-bold text-3xl md:text-5xl tracking-tight mt-8 mb-4 text-black dark:text-white">
                                         {postData.title}
                                     </h1>
                                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
                                         <div className="flex items-center">
-                                            <p className="text-sm text-gray-700">
+                                            <p className="text-base text-gray-700">
                                                 {postData.author.node.name} {`/`} {format(parseISO(postData.date), 'MMMM dd, yyyy')}
                                             </p>
                                         </div>
                                     </div>
-                                    <img src={postData.featuredImage.node.sourceUrl} />
+                                    <img
+                                        className="mt-4"
+                                        src={postData.featuredImage.node.sourceUrl}
+                                    />
                                 </div>
                                 <div
                                     className="blogPostBodyText"
