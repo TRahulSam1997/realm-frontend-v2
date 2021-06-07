@@ -80,7 +80,7 @@ const Styles = styled.div`
             padding-bottom: 1em;
         }
 
-        .wp-block-image {
+        .wp-block-image, .wp-block-embed {
             display: table;
             margin: 0 auto;
         }
