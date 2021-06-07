@@ -12,45 +12,6 @@ import Layout from '../../src/components/layout/index'
 const Styles = styled.div`
 
     .blogPostBodyText {
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            border-bottom: 1px dotted black;
-        }
-
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 120px;
-            background-color: #555;
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px 0;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -60px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .tooltip .tooltiptext::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: #555 transparent transparent transparent;
-        }
-
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
-        }
-
         width: 100%;
         display: block;
         font-size: 21px;
@@ -60,6 +21,45 @@ const Styles = styled.div`
         padding-bottom: 0.2em;
         /* font-family: libre baskerville, serif; */
         color: black;
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+
+            .tooltiptext {
+                visibility: hidden;
+                width: 120px;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -60px;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            .tooltiptext::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #555 transparent transparent transparent;
+            }
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
 
         blockquote {
             font-family: libre baskerville,serif;
@@ -79,14 +79,6 @@ const Styles = styled.div`
             padding-bottom: 1em;
         }
 
-        h3 {
-            padding-top: 2em;
-            padding-bottom: 2em;
-            text-align: left;
-            font-weight: bold;
-            border: solid #dc3545 0.25em;
-        }
-
         .wp-block-image {
             display: table;
             margin: 0 auto;
@@ -94,15 +86,15 @@ const Styles = styled.div`
 
         ol {
             list-style-type: numbers;
+            padding-left: 30px;
         }
 
-        p {
+        p, h4 {
             margin-top: 1em;
             margin-bottom: 1em;
         }
+
     }
-
-
 
 `;
 
@@ -140,7 +132,10 @@ export default function Post({ postData }) {
                                         {postData.title}
                                     </h1>
                                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
-                                        <p className="text-sm text-gray-700 dark:text-gray-300 ml-2">
+                                        <p className="text-sm text-gray-700">
+                                            {postData.author.node.name}
+                                        </p>
+                                        <p className="text-sm text-gray-700">
                                             {formatDate(postData.date)}
                                         </p>
                                     </div>
