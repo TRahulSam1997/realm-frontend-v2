@@ -5,6 +5,7 @@ import Layout from '../src/components/layout'
 import client from '../lib/apollo/client'
 import POSTS_FOR_HOME from '../lib/queries/home/postsForHome'
 import EmailCollection from '../src/components/email/emailCollection'
+import { parseISO, format } from 'date-fns';
 
 export default function Home({ allPostsForHome: { edges } }) {
   return (
@@ -54,7 +55,7 @@ export default function Home({ allPostsForHome: { edges } }) {
                                   className="h-10 w-10 rounded-full mr-2 object-cover" />
                                 <div>
                                   <p className="font-semibold text-gray-700 text-sm capitalize"> {node.author.node.name} </p>
-                                  <p className="text-gray-600 text-xs">{(node.date).split('T')[0]} </p>
+                                  <p className="text-gray-600 text-xs">{format(parseISO((node.date).split('T')[0]), 'MMMM dd, yyyy')}</p>
                                 </div>
                               </div>
                             </div>

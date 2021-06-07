@@ -8,6 +8,7 @@ import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';
 import styled from 'styled-components';
 import Layout from '../../src/components/layout/index'
+import { parseISO, format } from 'date-fns';
 
 const Styles = styled.div`
 
@@ -132,12 +133,11 @@ export default function Post({ postData }) {
                                         {postData.title}
                                     </h1>
                                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
-                                        <p className="text-sm text-gray-700">
-                                            {postData.author.node.name}
-                                        </p>
-                                        <p className="text-sm text-gray-700">
-                                            {formatDate(postData.date)}
-                                        </p>
+                                        <div className="flex items-center">
+                                            <p className="text-sm text-gray-700">
+                                                {postData.author.node.name} {`/`} {format(parseISO(postData.date), 'MMMM dd, yyyy')}
+                                            </p>
+                                        </div>
                                     </div>
                                     <img src={postData.featuredImage.node.sourceUrl} />
                                 </div>

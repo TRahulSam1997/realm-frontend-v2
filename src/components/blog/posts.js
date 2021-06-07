@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import {isEmpty, isArray} from 'lodash';
 import PropTypes from 'prop-types';
+import { parseISO, format } from 'date-fns';
 
 const Posts = ( { edges } ) => {
     if ( isEmpty( edges ) && ! isArray( edges ) ) {
@@ -45,7 +46,7 @@ const Posts = ( { edges } ) => {
                                                     className="h-10 w-10 rounded-full mr-2 object-cover" />
                                                 <div>
                                                     <p className="font-semibold text-gray-700 text-sm capitalize"> {node.author.node.name} </p>
-                                                    <p className="text-gray-600 text-xs">{(node.date).split('T')[0]} </p>
+                                                    <p className="text-gray-600 text-xs">{format(parseISO((node.date).split('T')[0]), 'MMMM dd, yyyy')}</p>
                                                 </div>
                                             </div>
                                         </div>
