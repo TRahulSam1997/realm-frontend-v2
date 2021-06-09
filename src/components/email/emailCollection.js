@@ -48,7 +48,7 @@ const EmailCollection = () => {
           <div className="m-auto">
             <p className="text-lg text-center md:text-4xl font-bold text-gray-300 dark:text-gray-100">Subscribe to our Newsletter</p>
             <p className="my-1 text-xl text-center text-gray-300 dark:text-gray-200">
-              Get emails on psychology, literature, religion & living truthfully.
+              Get emails on psychology, literature, philosophy, religion & living truthfully.
             </p>
             <form className="relative my-4" onSubmit={subscribe}>
             <input
