@@ -54,7 +54,7 @@ const Styles = styled.div`
 
     #youtube {
         position:relative;
-        top: calc(30% - 10px);
+        top: calc(18% - 10px);
     }
 
     #medium {
