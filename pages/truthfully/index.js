@@ -49,7 +49,8 @@ export default function Truthfully ({ pageData }) {
           <meta property="og:image" content="https://res.cloudinary.com/dkd4xa60a/image/upload/v1623412100/REALM/David_-_The_Death_of_Socrates_iqzfie.jpg" key="ogimage" />
           <meta property="og:site_name" content="REALM" key="ogsitename" />
           <meta property="og:title" content="What is Living Truthfully?" key="ogtitle" />
-          <meta property="og:description" content="test test" key="ogdesc" />
+          <meta property="og:description" content="test test" key="ogdesc" data-rh="true"/>
+          {/* <meta property='og:description' content='Description that will show in the preview' /> */}
 
           <title>What is Living Truthfully?</title>
         </Head>
