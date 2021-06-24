@@ -38,8 +38,11 @@ export default function Truthfully ({ pageData }) {
           <meta property="og:description" content="test test" key="ogdesc" />
 
           {/* Twitter */}
-          <meta name="twitter:card" content="summary" key="twcard" />
-          <meta name="twitter:creator" content="test test" key="twhandle" />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="@flickr" />
+          <meta name="twitter:title" content="Small Island Developing States Photo Submission" />
+          <meta name="twitter:description" content="View the album on Flickr." />
+          <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
 
           {/* Open Graph */}
           <meta property="og:url" content="test test"  key="ogurl" />
