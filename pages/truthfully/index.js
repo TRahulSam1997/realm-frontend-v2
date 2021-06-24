@@ -42,7 +42,7 @@ export default function Truthfully ({ pageData }) {
           <meta name="twitter:site" content="@flickr" />
           <meta name="twitter:title" content="Small Island Developing States Photo Submission" />
           <meta name="twitter:description" content="View the album on Flickr." />
-          <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
+          <meta name="twitter:image" content="https://res.cloudinary.com/dkd4xa60a/image/upload/v1623412100/REALM/David_-_The_Death_of_Socrates_iqzfie.jpg" />
 
           {/* Open Graph */}
           <meta property="og:url" content="test test"  key="ogurl" />
