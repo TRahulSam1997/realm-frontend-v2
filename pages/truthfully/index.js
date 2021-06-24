@@ -30,27 +30,24 @@ export default function Truthfully ({ pageData }) {
     <Styles>
       <Layout>
         <Head>
+          {/* Primary Meta Tags */}
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
           <meta name="description" content="test test" />
 
-          <meta property="og:title" content="What is Living Truthfully?" key="ogtitle" />
-          <meta property="og:description" content="test test" key="ogdesc" />
-
           {/* Twitter */}
-          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@REALM" />
           <meta name="twitter:title" content="What is Living Truthfully?" />
           <meta name="twitter:description" content="test test" />
           <meta name="twitter:image" content="https://res.cloudinary.com/dkd4xa60a/image/upload/v1623412100/REALM/David_-_The_Death_of_Socrates_iqzfie.jpg" />
 
-          {/* Open Graph */}
-          <meta property="og:url" content="test test"  key="ogurl" />
-          <meta property="og:image" content="https://res.cloudinary.com/dkd4xa60a/image/upload/v1623412100/REALM/David_-_The_Death_of_Socrates_iqzfie.jpg" key="ogimage" />
-          <meta property="og:site_name" content="REALM" key="ogsitename" />
-          <meta property="og:title" content="What is Living Truthfully?" key="ogtitle" />
+          {/* Open Graph / Facebook */}
+          <meta property="og:url" content="test test" />
+          <meta property="og:image" content="https://res.cloudinary.com/dkd4xa60a/image/upload/v1623412100/REALM/David_-_The_Death_of_Socrates_iqzfie.jpg" />
+          <meta property="og:site_name" content="REALM" />
+          <meta property="og:title" content="What is Living Truthfully?" />
           <meta property="og:description" content="test test" />
-          {/* <meta property='og:description' content='Description that will show in the preview' /> */}
 
           <title>What is Living Truthfully?</title>
         </Head>
