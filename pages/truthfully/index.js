@@ -40,11 +40,11 @@ export default function Truthfully ({ pageData }) {
           <meta name="twitter:site" content="@REALM" />
           <meta name="twitter:title" content="What is Living Truthfully?" />
           <meta name="twitter:description" content="test test" />
-          <meta name="twitter:image" content="https://res.cloudinary.com/dkd4xa60a/image/upload/v1623412100/REALM/David_-_The_Death_of_Socrates_iqzfie.jpg" />
+          <meta name="twitter:image" content="https://res.cloudinary.com/dkd4xa60a/image/upload/v1623412100/REALM/socrates.jpg" />
 
           {/* Open Graph / Facebook */}
           <meta property="og:url" content="test test" />
-          <meta property="og:image" content="https://res.cloudinary.com/dkd4xa60a/image/upload/v1623412100/REALM/David_-_The_Death_of_Socrates_iqzfie.jpg" />
+          <meta property="og:image" content="https://res.cloudinary.com/dkd4xa60a/image/upload/v1623412100/REALM/socrates.jpg" />
           <meta property="og:site_name" content="REALM" />
           <meta property="og:title" content="What is Living Truthfully?" />
           <meta property="og:description" content="test test" />
@@ -58,7 +58,7 @@ export default function Truthfully ({ pageData }) {
             What is Living Truthfully?
           </h1>
           <img
-            src="https://res.cloudinary.com/dkd4xa60a/image/upload/v1623412100/REALM/David_-_The_Death_of_Socrates_iqzfie.jpg"
+            src="https://res.cloudinary.com/dkd4xa60a/image/upload/v1623412100/REALM/socrates.jpg"
             className="w-8/12"
           />
           <p className="mt-1">The Death of Socrates | Jacques-Louis David 1787.</p>
