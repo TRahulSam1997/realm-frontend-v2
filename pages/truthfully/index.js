@@ -96,7 +96,7 @@ export default function Truthfully ({ pageData }) {
             src="https://res.cloudinary.com/dkd4xa60a/image/upload/v1623412100/REALM/David_-_The_Death_of_Socrates_iqzfie.jpg"
             className="w-8/12"
           />
-          <p>The Death of Socrates | Jacques-Louis David 1787.</p>
+          <p className="mt-1">The Death of Socrates | Jacques-Louis David 1787.</p>
           <div className="w-8/12 mb-32">
             <div
               dangerouslySetInnerHTML={{ __html: pageData.content }}
