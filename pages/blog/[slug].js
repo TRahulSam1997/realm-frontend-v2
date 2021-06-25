@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import Head from 'next/head';
 import Link from 'next/link';
 import client from '../../lib/apollo/client'
 import POSTS_WITH_SLUGS from '../../lib/queries/blog/postswithslugs'
@@ -117,12 +116,13 @@ export default function Post({ postData }) {
 
     return (
         <Styles>
-            <Layout>
+            <Layout
+                title={postData.title}
+                description={postData.extraPostInfo.authorExcerpt}
+                previewImage={postData.extraPostInfo.previewImage}
+                uri={postData.uri}
+                >
                 <div className={styles.container}>
-                    <Head>
-                        <title>{postData.title}</title>
-                        <link rel='icon' href='/favicon.ico' />
-                    </Head>
 
                     <main className={styles.main}>
                         {router.isFallback ? (

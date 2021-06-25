@@ -31,6 +31,7 @@ export default function Truthfully ({ pageData }) {
       <Layout>
         <Head>
           {/* Primary Meta Tags */}
+          <title>What is Living Truthfully?</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
           <meta name="description" content="test test" />
@@ -49,7 +50,6 @@ export default function Truthfully ({ pageData }) {
           <meta property="og:title" content="What is Living Truthfully?" />
           <meta property="og:description" content="test test" />
 
-          <title>What is Living Truthfully?</title>
         </Head>
         <main className={styles.main}>
           <h1
