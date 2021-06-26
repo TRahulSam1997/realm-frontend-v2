@@ -121,7 +121,7 @@ export default function Post({ postData }) {
                 description={postData.extraPostInfo.authorExcerpt}
                 previewImage={postData.extraPostInfo.previewImage}
                 uri={postData.uri}
-                >
+            >
                 <div className={styles.container}>
 
                     <main className={styles.main}>
