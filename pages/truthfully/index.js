@@ -30,9 +30,9 @@ export default function Truthfully ({ pageData }) {
     <Styles>
       <Layout
           title="What is Living Truthfully?"
-          description={postData.extraPostInfo.authorExcerpt}
+          description="It always baffled me when I hear people say that studying the humanities is useless and a waste of time. The notion comes in many forms..."
           previewImage="https://res.cloudinary.com/dkd4xa60a/image/upload/v1623412100/REALM/socrates.jpg"
-          uri={postData.uri}
+          uri={pageData.uri}
       >
           <main className={styles.main}>
             <h1
