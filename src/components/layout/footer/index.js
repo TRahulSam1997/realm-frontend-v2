@@ -70,7 +70,7 @@ const Footer = () => {
               <div className="w-full lg:w-7/12 px-4">
                 <span className="text-white font-semibold block pb-2 text-sm">
                   <h2 className="block uppercase text-sm text-gray-300 font-semibold mb-2">Who are we?</h2>
-                  <p className="text-gray-300" >REALM explores psychology, philosophy & literature aimed towards virtue. Better people make better societies; our only goal is to help individuals live truthfully.</p>
+                  <p className="text-gray-300" >REALM explores psychology, philosophy, literature & religion aimed towards virtue. Better people make better societies; our goal is to help individuals live truthfully.</p>
                 </span>
               </div>
             </div>
