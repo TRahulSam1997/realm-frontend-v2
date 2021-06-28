@@ -4,7 +4,6 @@ import LIVING_TRUTHFULLY from '../../lib/queries/pages/livingTruthfully'
 import client from '../../lib/apollo/client'
 import styles from '../../styles/Home.module.css'
 import styled from 'styled-components';
-import Head from 'next/head'
 
 const Styles = styled.div`
 
