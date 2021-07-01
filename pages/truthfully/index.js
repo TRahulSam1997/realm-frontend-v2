@@ -49,7 +49,6 @@ export default function Truthfully ({ pageData }) {
                 dangerouslySetInnerHTML={{ __html: pageData.content }}
                 className="blogPostBodyText"
               />
-            <p>~ Rahul</p>
             </div>
           </main>
       </Layout>
