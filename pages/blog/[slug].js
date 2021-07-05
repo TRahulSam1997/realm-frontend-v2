@@ -100,6 +100,14 @@ const Styles = styled.div`
             font-size: 1.2em;
         }
 
+        a {
+          text-decoration: underline;
+
+          :hover {
+            color: blue;
+          }
+        }
+
     }
 
 `;
