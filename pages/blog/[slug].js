@@ -95,6 +95,11 @@ const Styles = styled.div`
             margin-bottom: 1em;
         }
 
+        h4 {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
     }
 
 `;

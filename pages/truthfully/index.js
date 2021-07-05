@@ -18,9 +18,35 @@ const Styles = styled.div`
         /* font-family: libre baskerville, serif; */
         color: black;
 
-        p {
+        blockquote {
+            font-family: libre baskerville,serif;
+            font-style: italic;
+            width: inherit;
+            margin: 0.25em 0;
+            padding-left: 15px;
+            /* padding: 0px 0px; */
+            line-height: 1.45;
+            position: relative;
+            color: #747474;
+            border-left:5px solid #384d48;
+        }
+
+        p, h4 {
             margin-top: 1em;
             margin-bottom: 1em;
+        }
+
+        h4 {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        a {
+          text-decoration: underline;
+
+          :hover {
+            color: blue;
+          }
         }
     }
 `

@@ -27,7 +27,7 @@ const Styles = styled.div`
             margin-top: 1em;
             margin-bottom: 1em;
             font-size: 1.5em;
-            font-style: bold;
+            font-weight: bold;
         }
 
         a {
