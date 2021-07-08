@@ -81,7 +81,7 @@ export default function SocialIcons() {
                             </a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/trsam97">
+                            <a href="https://twitter.com/">
                                 <FontAwesomeIcon icon={faTwitter} id="twitter"/>
                             </a>
                         </li>
@@ -91,7 +91,7 @@ export default function SocialIcons() {
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/rahulsam/">
+                            <a href="https://www.youtube.com/channel/UCnY9ri6ix5qD74BiKZo-5rQ">
                                 <FontAwesomeIcon icon={faYoutube} id="youtube"/>
                             </a>
                         </li>
