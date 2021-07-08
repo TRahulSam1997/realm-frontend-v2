@@ -71,7 +71,7 @@ export default function SocialIcons() {
                 <div id="social-test">
                     <ul className="social">
                         <li>
-                            <a href="https://www.facebook.com/">
+                            <a href="https://www.facebook.com/REALM-111744604506248">
                                 <FontAwesomeIcon icon={faFacebook} id="facebook"/>
                             </a>
                         </li>
