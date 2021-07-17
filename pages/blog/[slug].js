@@ -80,9 +80,14 @@ const Styles = styled.div`
             padding-bottom: 1em;
         }
 
-        .wp-block-image, .wp-block-embed {
+        .wp-block-image, figcaption, .wp-block-embed {
             display: table;
             margin: 0 auto;
+        }
+
+        figcaption {
+            font-size: 16px;
+            font-style: italic;
         }
 
         ol {
