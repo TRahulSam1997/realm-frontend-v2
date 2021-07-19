@@ -12,7 +12,7 @@ export default function Home({ allPostsForHome: { edges } }) {
     <>
       <Head>
         <title>REALM</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="https://res.cloudinary.com/dkd4xa60a/image/upload/v1618225098/REALM/logo192_mxoxsc.jpg" />
       </Head>
       <Layout>
         <main className={styles.main}>

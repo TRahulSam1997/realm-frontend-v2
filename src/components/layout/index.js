@@ -16,7 +16,7 @@ const Layout = ({children,
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta charSet="utf-8" />
                 <meta name="description" content={description || 'REALM'} />
-                <link rel='icon' href='/favicon.ico' />
+                <link rel='icon' href='https://res.cloudinary.com/dkd4xa60a/image/upload/v1618225098/REALM/logo192_mxoxsc.jpg' />
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />

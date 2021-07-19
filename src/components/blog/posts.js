@@ -13,7 +13,7 @@ const Posts = ( { edges } ) => {
         <div className={styles.container}>
             <Head>
                 <title>Essays</title>
-                <link rel='icon' href='/favicon.ico' />
+                <link rel='icon' href='https://res.cloudinary.com/dkd4xa60a/image/upload/v1618225098/REALM/logo192_mxoxsc.jpg' />
             </Head>
 
             <main className={styles.main}>
