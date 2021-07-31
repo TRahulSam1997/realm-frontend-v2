@@ -95,6 +95,19 @@ const Styles = styled.div`
             padding-left: 30px;
         }
 
+        ul {
+            list-style-type: none;
+            padding-left: 30px;
+            li::before {
+                content: "• ";
+                color: black;
+                font-weight: bold;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+            }
+        }
+
         p, h4 {
             margin-top: 1em;
             margin-bottom: 1em;
