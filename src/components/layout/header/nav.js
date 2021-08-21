@@ -24,9 +24,9 @@ const Nav = () => {
                 <svg className="w-6 h-6 text-gray-300 hover:bg-black hover:text-white"
 							x-show="!showMenu"
 							fill="none"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							strokeWidth="2"
 							viewBox="0 0 24 24"
 							stroke="currentColor"
 				>
