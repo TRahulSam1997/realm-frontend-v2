@@ -6,6 +6,7 @@ import client from '../lib/apollo/client'
 import POSTS_FOR_HOME from '../lib/queries/home/postsForHome'
 import EmailCollection from '../src/components/email/emailCollection'
 import { parseISO, format } from 'date-fns';
+import db from '../src/utils/db'
 
 export default function Home({ allPostsForHome: { edges } }) {
   return (
@@ -87,6 +88,14 @@ export async function getStaticProps() {
   const { data } = await client.query({
       query: POSTS_FOR_HOME
   });
+
+  const users = await db.collection('users').orderBy('name').get();
+  const usersData = users.docs.map(user => ({
+    id: user.id,
+    ...user.data()
+  }));
+
+  // console.log({usersData});
 
   return {
     props: {
