@@ -52,7 +52,7 @@ export default function Home({ allPostsForHome: { edges } }) {
                                 {node.extraPostInfo.authorExcerpt}
                               </p>
                               <div className="flex mt-3">
-                                <img src="https://res.cloudinary.com/dkd4xa60a/image/upload/v1622025941/REALM/istockphoto-1016744034-612x612_ajt0jr.jpg"
+                                <img src={node.author.node.imageURL}
                                   className="h-10 w-10 rounded-full mr-2 object-cover" />
                                 <div>
                                   <p className="font-semibold text-gray-700 text-sm capitalize"> {node.author.node.name} </p>
@@ -82,12 +82,34 @@ export default function Home({ allPostsForHome: { edges } }) {
   )
 }
 
+const findImage = (id, fbJSON) => {
+  const user = fbJSON.usersData.find(data => data.wpID === id);
+  if (user) {
+    return user.imageURL;
+  } else {
+    return '';
+  }
+}
+
+const result = (wpJSON, fbJSON) => {
+  wpJSON.edges.forEach(edge => {
+    const imageURL = findImage(edge.node.id, fbJSON);
+    if (imageURL) {
+      edge.node.author.node['imageURL'] = imageURL;
+    } else {
+      edge.node.author.node['imageURL'] = 'https://bit.ly/3sUszSK';
+    }
+  });
+
+  return wpJSON;
+}
+
 export async function getStaticProps() {
-  // const allPosts = await getAllPosts();
 
   const { data } = await client.query({
       query: POSTS_FOR_HOME
   });
+
 
   const users = await db.collection('users').orderBy('name').get();
   const usersData = users.docs.map(user => ({
@@ -95,11 +117,13 @@ export async function getStaticProps() {
     ...user.data()
   }));
 
-  // console.log({usersData});
+  const updatedDate = result(data?.posts, {usersData});
+
+  // console.log(updatedDate.edges[0].node);
 
   return {
     props: {
-      allPostsForHome: data?.posts
+      allPostsForHome: updatedDate
     },
     revalidate: 1
   };
