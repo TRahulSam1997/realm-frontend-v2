@@ -32,7 +32,7 @@ const result = (wpJSON, fbJSON) => {
     if (imageURL) {
       edge.node.author.node['imageURL'] = imageURL;
     } else {
-      edge.node.author.node['imageURL'] = 'https://bit.ly/3sUszSK';
+      edge.node.author.node['imageURL'] = 'https://res.cloudinary.com/dkd4xa60a/image/upload/v1622025941/REALM/istockphoto-1016744034-612x612_ajt0jr.jpg';
     }
   });
 
