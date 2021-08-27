@@ -42,7 +42,7 @@ const Posts = ( { edges } ) => {
                                                 {node.extraPostInfo.authorExcerpt}
                                             </p>
                                             <div className="flex mt-3">
-                                                <img src="https://res.cloudinary.com/dkd4xa60a/image/upload/v1622025941/REALM/istockphoto-1016744034-612x612_ajt0jr.jpg"
+                                                <img src={node.author.node.id}
                                                     className="h-10 w-10 rounded-full mr-2 object-cover" />
                                                 <div>
                                                     <p className="font-semibold text-gray-700 text-sm capitalize"> {node.author.node.name} </p>
