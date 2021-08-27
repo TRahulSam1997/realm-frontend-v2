@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import Layout from '../../src/components/layout/index'
 import { parseISO, format } from 'date-fns';
 import Image from 'next/image';
-// import db from '../../src/utils/db';
+import db from '../../src/utils/db';
 
 const Styles = styled.div`
 
@@ -171,7 +171,7 @@ export default function Post({ postData }) {
                                             alt={postData.author.node.name}
                                             height={24}
                                             width={24}
-                                            src="https://res.cloudinary.com/dkd4xa60a/image/upload/v1622025941/REALM/istockphoto-1016744034-612x612_ajt0jr.jpg"
+                                            src={postData.author.node.imageURL}
                                             className="rounded-full"
                                             />
                                             <p className="text-base text-gray-700 ml-1">
@@ -223,27 +223,25 @@ export async function getStaticPaths() {
 
 }
 
-// const findImage = (id, fbJSON) => {
-//     const user = fbJSON.usersData.find(data => data.wpID === id);
-//     if (user) {
-//         return user.imageURL;
-//     } else {
-//         return '';
-//     }
-// }
+const findImage = (id, fbJSON) => {
+    const user = fbJSON.usersData.find(data => data.wpID === id);
+    if (user) {
+        return user.imageURL;
+    } else {
+        return '';
+    }
+}
 
-// const result = (wpJSON, fbJSON) => {
-//     wpJSON.edges.forEach(edge => {
-//         const imageURL = findImage(edge.node.id, fbJSON);
-//         if (imageURL) {
-//             edge.node.author.node['imageURL'] = imageURL;
-//         } else {
-//             edge.node.author.node['imageURL'] = 'https://bit.ly/3sUszSK';
-//         }
-//     });
+const result = (wpJSON, fbJSON) => {
+    const imageURL = findImage(wpJSON.id, fbJSON);
+    if (imageURL) {
+        wpJSON.author.node['imageURL'] = imageURL;
+    } else {
+        wpJSON.author.node['imageURL'] = 'https://bit.ly/3sUszSK';
+    }
 
-//     return wpJSON;
-// }
+    return wpJSON;
+}
 
 export async function getStaticProps({ params }) {
     const { data } = await client.query({
@@ -254,17 +252,14 @@ export async function getStaticProps({ params }) {
             }
         });
 
-    // const users = await db.collection('users').orderBy('name').get();
-    // const usersData = users.docs.map(user => ({
-    //     id: user.id,
-    //     ...user.data()
-    // }));
+    const users = await db.collection('users').orderBy('name').get();
+    const usersData = users.docs.map(user => ({
+        id: user.id,
+        ...user.data()
+    }));
 
-    // console.log({usersData});
+    const updatedDate = result(data.post, {usersData});
 
-    // const updatedDate = result(data?.posts, {usersData});
-
-    console.log(data.post);
 
     return {
       props: {
