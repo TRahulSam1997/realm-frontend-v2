@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import Layout from '../../src/components/layout/index'
 import { parseISO, format } from 'date-fns';
 import Image from 'next/image';
-import db from '../../src/utils/db';
+// import db from '../../src/utils/db';
 
 const Styles = styled.div`
 
@@ -223,6 +223,27 @@ export async function getStaticPaths() {
 
 }
 
+// const findImage = (id, fbJSON) => {
+//     const user = fbJSON.usersData.find(data => data.wpID === id);
+//     if (user) {
+//         return user.imageURL;
+//     } else {
+//         return '';
+//     }
+// }
+
+// const result = (wpJSON, fbJSON) => {
+//     wpJSON.edges.forEach(edge => {
+//         const imageURL = findImage(edge.node.id, fbJSON);
+//         if (imageURL) {
+//             edge.node.author.node['imageURL'] = imageURL;
+//         } else {
+//             edge.node.author.node['imageURL'] = 'https://bit.ly/3sUszSK';
+//         }
+//     });
+
+//     return wpJSON;
+// }
 
 export async function getStaticProps({ params }) {
     const { data } = await client.query({
@@ -232,6 +253,18 @@ export async function getStaticProps({ params }) {
                 idType: 'SLUG'
             }
         });
+
+    // const users = await db.collection('users').orderBy('name').get();
+    // const usersData = users.docs.map(user => ({
+    //     id: user.id,
+    //     ...user.data()
+    // }));
+
+    // console.log({usersData});
+
+    // const updatedDate = result(data?.posts, {usersData});
+
+    console.log(data.post);
 
     return {
       props: {
