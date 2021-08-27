@@ -57,6 +57,9 @@ export async function getStaticProps() {
 
     const updatedDate = result(data?.posts, {usersData});
 
+    console.log(updatedDate.edges[0].node.author.node.imageURL);
+    console.log(updatedDate.edges[1]);
+
     return {
       props: {
         allPosts: updatedDate

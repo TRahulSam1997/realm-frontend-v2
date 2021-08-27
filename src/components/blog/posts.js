@@ -42,7 +42,7 @@ const Posts = ( { edges } ) => {
                                                 {node.extraPostInfo.authorExcerpt}
                                             </p>
                                             <div className="flex mt-3">
-                                                <img src={node.author.node.id}
+                                                <img src={node.author.node.imageURL}
                                                     className="h-10 w-10 rounded-full mr-2 object-cover" />
                                                 <div>
                                                     <p className="font-semibold text-gray-700 text-sm capitalize"> {node.author.node.name} </p>
