@@ -28,7 +28,7 @@ const findImage = (id, fbJSON) => {
 
 const result = (wpJSON, fbJSON) => {
   wpJSON.edges.forEach(edge => {
-    const imageURL = findImage(edge.node.id, fbJSON);
+    const imageURL = findImage(edge.node.author.node.id, fbJSON);
     if (imageURL) {
       edge.node.author.node['imageURL'] = imageURL;
     } else {

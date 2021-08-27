@@ -233,7 +233,7 @@ const findImage = (id, fbJSON) => {
 }
 
 const result = (wpJSON, fbJSON) => {
-    const imageURL = findImage(wpJSON.id, fbJSON);
+    const imageURL = findImage(wpJSON.author.node.id, fbJSON);
     if (imageURL) {
         wpJSON.author.node['imageURL'] = imageURL;
     } else {
