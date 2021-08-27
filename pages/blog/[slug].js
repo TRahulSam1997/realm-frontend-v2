@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import Layout from '../../src/components/layout/index'
 import { parseISO, format } from 'date-fns';
 import Image from 'next/image';
+import db from '../../src/utils/db';
 
 const Styles = styled.div`
 
