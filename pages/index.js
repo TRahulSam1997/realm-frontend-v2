@@ -117,9 +117,12 @@ export async function getStaticProps() {
     ...user.data()
   }));
 
+  // console.log({usersData});
+
   const updatedDate = result(data?.posts, {usersData});
 
   // console.log(updatedDate.edges[0].node);
+  // console.log(updatedDate.edges[1].node);
 
   return {
     props: {
