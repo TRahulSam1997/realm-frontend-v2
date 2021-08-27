@@ -1,12 +1,12 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
-import Layout from '../src/components/layout'
-import client from '../lib/apollo/client'
-import POSTS_FOR_HOME from '../lib/queries/home/postsForHome'
-import EmailCollection from '../src/components/email/emailCollection'
+import Head from 'next/head';
+import Link from 'next/link';
+import styles from '../styles/Home.module.css';
+import Layout from '../src/components/layout';
+import client from '../lib/apollo/client';
+import POSTS_FOR_HOME from '../lib/queries/home/postsForHome';
+import EmailCollection from '../src/components/email/emailCollection';
 import { parseISO, format } from 'date-fns';
-import db from '../src/utils/db'
+import db from '../src/utils/db';
 
 export default function Home({ allPostsForHome: { edges } }) {
   return (
