@@ -1,6 +1,6 @@
 # Front-end for REALM
 
-Front-end for <a href="https://realmprojectau.com" target="_blank">https://realmprojectau.com</a>.
+Front-end for [https://realmprojectau.com](https://realmprojectau.com/).
 
 ***This is an ongoing project.***
 
