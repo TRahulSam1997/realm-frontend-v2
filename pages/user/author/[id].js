@@ -1,15 +1,15 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import client from '../../lib/apollo/client'
+import client from '../../../lib/apollo/client'
 import AUTHORS_WITH_IDS from '../../../lib/queries/authors/authorswithids'
 import AUTHOR from '../../../lib/queries/authors/author'
-import styles from '../../styles/Home.module.css';
-import blogStyles from '../../styles/Blog.module.css';
+import styles from '../../../styles/Home.module.css';
+import blogStyles from '../../../styles/Blog.module.css';
 import styled from 'styled-components';
-import Layout from '../../src/components/layout/index'
+import Layout from '../../../src/components/layout/index'
 import { parseISO, format } from 'date-fns';
 import Image from 'next/image';
-import db from '../../src/utils/db';
+import db from '../../../src/utils/db';
 
 export default function Author({ postData }) {
     const router = useRouter();
@@ -88,17 +88,16 @@ export async function getStaticPaths() {
     });
 
     if (
-        data?.posts &&
-        data?.posts.edges !== null &&
-        data?.posts.edges.node !== null &&
-        data?.posts.edges.length > 0
+        data?.users &&
+        data?.users.edges !== null &&
+        data?.users.edges.node !== null &&
+        data?.users.edges.length > 0
     ) {
         return {
-            paths: data?.posts.edges.map(({ node }) => `/user/author${node.author.node.id}`) || [],
+            paths: data?.users.edges.map(({ node }) => `/user/author/${node.id}`) || [],
             fallback: 'blocking'
         }
     }
-
 }
 
 const findImage = (id, fbJSON) => {
