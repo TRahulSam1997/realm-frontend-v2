@@ -258,12 +258,12 @@ export async function getStaticProps({ params }) {
         ...user.data()
     }));
 
-    const updatedDate = result(data.post, {usersData});
+    const updatedData = result(data.post, {usersData});
 
 
     return {
       props: {
-        postData: data.post
+        postData: updatedData
       },
       revalidate: 1
     };

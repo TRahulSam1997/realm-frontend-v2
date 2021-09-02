@@ -55,14 +55,14 @@ export async function getStaticProps() {
       ...user.data()
     }));
 
-    const updatedDate = result(data?.posts, {usersData});
+    const updatedData = result(data?.posts, {usersData});
 
     // console.log(updatedDate.edges[0].node.author.node.imageURL);
     // console.log(updatedDate.edges[1]);
 
     return {
       props: {
-        allPosts: updatedDate
+        allPosts: updatedData
       },
       revalidate: 1
     };
