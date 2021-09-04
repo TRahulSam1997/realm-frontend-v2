@@ -41,14 +41,16 @@ const Posts = ( { edges } ) => {
                                             >
                                                 {node.extraPostInfo.authorExcerpt}
                                             </p>
-                                            <div className="flex mt-3">
-                                                <img src={node.author.node.imageURL}
-                                                    className="h-10 w-10 rounded-full mr-2 object-cover" />
-                                                <div>
-                                                    <p className="font-semibold text-gray-700 text-sm capitalize"> {node.author.node.name} </p>
-                                                    <p className="text-gray-600 text-xs">{format(parseISO((node.date).split('T')[0]), 'MMMM dd, yyyy')}</p>
+                                            <Link href={`/user/author/${node.author.node.id}`}>
+                                                <div className="flex mt-3">
+                                                    <img src={node.author.node.imageURL}
+                                                        className="h-10 w-10 rounded-full mr-2 object-cover" />
+                                                    <div>
+                                                        <p className="font-semibold text-gray-700 text-sm capitalize"> {node.author.node.name} </p>
+                                                        <p className="text-gray-600 text-xs">{format(parseISO((node.date).split('T')[0]), 'MMMM dd, yyyy')}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </Link>
                                         </div>
                                     </a>
                                     </Link>
