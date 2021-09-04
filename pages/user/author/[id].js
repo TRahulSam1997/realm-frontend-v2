@@ -258,6 +258,8 @@ export async function getStaticProps({ params }) {
 
     const updatedDate = result(data.user?.posts, {usersData});
 
+    // console.log('value is ' + JSON.stringify(data.user?.posts));
+
     return {
       props: {
         postData: updatedDate
