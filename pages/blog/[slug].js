@@ -167,15 +167,21 @@ export default function Post({ postData }) {
                                     </h1>
                                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
                                         <div className="flex items-center">
-                                            <Image
-                                            alt={postData.author.node.name}
-                                            height={24}
-                                            width={24}
-                                            src={postData.author.node.imageURL}
-                                            className="rounded-full"
-                                            />
+                                            <Link href={`/user/author/${postData.author.node.id}`}>
+                                                <Image
+                                                alt={postData.author.node.name}
+                                                height={24}
+                                                width={24}
+                                                src={postData.author.node.imageURL}
+                                                className="rounded-full"
+                                                />
+                                            </Link>
                                             <p className="text-base text-gray-700 ml-1">
-                                                {postData.author.node.name} {`/`} {format(parseISO(postData.date), 'MMMM dd, yyyy')}
+                                                <Link href={`/user/author/${postData.author.node.id}`}>
+                                                    {postData.author.node.name}
+                                                </Link>
+                                                {`/`}
+                                                {format(parseISO(postData.date), 'MMMM dd, yyyy')}
                                             </p>
                                         </div>
                                     </div>
