@@ -249,7 +249,7 @@ export async function getStaticProps({ params }) {
         });
 
     // console.log('value is ' + JSON.stringify(data.user.posts));
-    console.log('value is ' + JSON.stringify(data));
+    // console.log('value is ' + JSON.stringify(data));
 
     const users = await db.collection('users').orderBy('name').get();
     const usersData = users.docs.map(user => ({
