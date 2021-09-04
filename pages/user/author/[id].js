@@ -134,7 +134,7 @@ const Styles = styled.div`
 export default function Author({ postData }) {
     const router = useRouter();
 
-    if (!router.isFallback && !postData?.edges) {
+    if (!router.isFallback && !postData?.edges[0]) {
         return <p>hmm... looks like an error</p>
     }
 
@@ -184,10 +184,10 @@ export default function Author({ postData }) {
                                         src={postData.edges[0].node.author.node.imageURL}
                                     />
                                 </div>
-                                <div
+                                {/* <div
                                     className="blogPostBodyText"
                                     dangerouslySetInnerHTML={{ __html: postData.content }}
-                                />
+                                /> */}
                             </article>
                         )}
                         <p>
