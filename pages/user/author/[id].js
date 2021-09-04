@@ -249,6 +249,7 @@ export async function getStaticProps({ params }) {
         });
 
     // console.log('value is ' + JSON.stringify(data.user.posts));
+    console.log('value is ' + JSON.stringify(data));
 
     const users = await db.collection('users').orderBy('name').get();
     const usersData = users.docs.map(user => ({
@@ -256,9 +257,10 @@ export async function getStaticProps({ params }) {
         ...user.data()
     }));
 
-    const updatedDate = result(data.user?.posts, {usersData});
-
-    // console.log('value is ' + JSON.stringify(data.user?.posts));
+    let updatedDate = null;
+    if (data.user.posts.edges[0] != null) {
+        updatedDate = result(data.user?.posts, {usersData});
+    }
 
     return {
       props: {
