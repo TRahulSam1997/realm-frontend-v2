@@ -258,7 +258,7 @@ export async function getStaticProps({ params }) {
         ...user.data()
     }));
 
-    const updatedData = result(data.post, {usersData});
+    const updatedData = result(data?.post, {usersData});
 
 
     return {

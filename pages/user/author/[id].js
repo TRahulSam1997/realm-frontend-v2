@@ -11,10 +11,130 @@ import { parseISO, format } from 'date-fns';
 import Image from 'next/image';
 import db from '../../../src/utils/db';
 
+const Styles = styled.div`
+
+    .blogPostBodyText {
+        width: 100%;
+        display: block;
+        font-size: 19px;
+        text-align: left;
+        text-justify: inter-word;
+        padding-top: 0.6em;
+        padding-bottom: 0.2em;
+        /* font-family: libre baskerville, serif; */
+        color: black;
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+
+            .tooltiptext {
+                visibility: hidden;
+                width: 120px;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -60px;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            .tooltiptext::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #555 transparent transparent transparent;
+            }
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        blockquote {
+            font-family: libre baskerville,serif;
+            font-style: italic;
+            width: inherit;
+            margin: 0.25em 0;
+            padding-left: 15px;
+            /* padding: 0px 0px; */
+            line-height: 1.45;
+            position: relative;
+            color: #747474;
+            border-left:5px solid #384d48;
+        }
+
+        .wp-block-separator {
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+        .wp-block-image, figcaption, .wp-block-embed {
+            display: table;
+            margin: 0 auto;
+        }
+
+        figcaption {
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        ol {
+            list-style-type: numbers;
+            padding-left: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 30px;
+            li::before {
+                content: "• ";
+                color: black;
+                font-weight: bold;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+            }
+        }
+
+        p, h4 {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        h4 {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        a {
+          text-decoration: underline;
+
+          :hover {
+            color: blue;
+          }
+        }
+
+    }
+
+`;
+
 export default function Author({ postData }) {
     const router = useRouter();
 
-    if (!router.isFallback && !postData?.slug) {
+    if (!router.isFallback && !postData?.edges) {
         return <p>hmm... looks like an error</p>
     }
 
@@ -29,10 +149,10 @@ export default function Author({ postData }) {
     return (
         <Styles>
             <Layout
-                title={postData.title}
-                description={postData.extraPostInfo.authorExcerpt}
-                previewImage={postData.extraPostInfo.previewImage}
-                uri={postData.uri}
+                title={postData.edges[0].node.title}
+                description={postData.edges[0].node.extraPostInfo.authorExcerpt}
+                previewImage={postData.edges[0].node.extraPostInfo.previewImage}
+                uri={postData.edges[0].node.uri}
             >
                 <div className={styles.container}>
 
@@ -43,25 +163,25 @@ export default function Author({ postData }) {
                             <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
                                 <div className={blogStyles.postmeta}>
                                     <h1 className="font-bold text-3xl md:text-5xl tracking-tight mt-8 mb-4 text-black dark:text-white">
-                                        {postData.title}
+                                        {postData.edges[0].node.title}
                                     </h1>
                                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
                                         <div className="flex items-center">
                                             <Image
-                                            alt={postData.author.node.name}
+                                            alt={postData.edges[0].node.author.name}
                                             height={24}
                                             width={24}
-                                            src={postData.author.node.imageURL}
+                                            src={postData.edges[0].node.author.node.imageURL}
                                             className="rounded-full"
                                             />
                                             <p className="text-base text-gray-700 ml-1">
-                                                {postData.author.node.name} {`/`} {format(parseISO(postData.date), 'MMMM dd, yyyy')}
+                                                {postData.edges[0].node.author.name} {`/`} {format(parseISO(postData.edges[0].node.date), 'MMMM dd, yyyy')}
                                             </p>
                                         </div>
                                     </div>
                                     <img
                                         className="mt-4"
-                                        src={postData.featuredImage.node.sourceUrl}
+                                        src={postData.edges[0].node.author.node.imageURL}
                                     />
                                 </div>
                                 <div
@@ -110,11 +230,11 @@ const findImage = (id, fbJSON) => {
 }
 
 const result = (wpJSON, fbJSON) => {
-    const imageURL = findImage(wpJSON.author.node.id, fbJSON);
+    const imageURL = findImage(wpJSON.edges[0].node.author.node.id, fbJSON);
     if (imageURL) {
-        wpJSON.author.node['imageURL'] = imageURL;
+        wpJSON.edges[0].node.author.node['imageURL'] = imageURL;
     } else {
-        wpJSON.author.node['imageURL'] = 'https://res.cloudinary.com/dkd4xa60a/image/upload/v1622025941/REALM/istockphoto-1016744034-612x612_ajt0jr.jpg';
+        wpJSON.edges[0].node.author.node['imageURL'] = 'https://res.cloudinary.com/dkd4xa60a/image/upload/v1622025941/REALM/istockphoto-1016744034-612x612_ajt0jr.jpg';
     }
 
     return wpJSON;
@@ -124,10 +244,11 @@ export async function getStaticProps({ params }) {
     const { data } = await client.query({
         query: AUTHOR,
             variables: {
-                id: params.id,
-                idType: 'ID'
+                id: params.id
             }
         });
+
+    // console.log('value is ' + JSON.stringify(data.user.posts));
 
     const users = await db.collection('users').orderBy('name').get();
     const usersData = users.docs.map(user => ({
@@ -135,13 +256,12 @@ export async function getStaticProps({ params }) {
         ...user.data()
     }));
 
-    const updatedDate = result(data.post, {usersData});
-
+    const updatedDate = result(data.user?.posts, {usersData});
 
     return {
       props: {
-        postData: data.post
+        postData: updatedDate
       },
       revalidate: 1
     };
-  }
+}
