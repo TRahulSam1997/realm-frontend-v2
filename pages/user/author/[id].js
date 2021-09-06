@@ -10,6 +10,8 @@ import Layout from '../../../src/components/layout/index'
 import { parseISO, format } from 'date-fns';
 import Image from 'next/image';
 import db from '../../../src/utils/db';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Styles = styled.div`
 
@@ -163,12 +165,17 @@ export default function Author({ postData }) {
                             <article className="flex flex-col justify-center items-start max-w-8xl mx-auto mb-16 w-full">
                                 <div className="container mx-auto mt-8 md:mt-0 md:space-x-10 md:grid grid-cols-3 justify-center md:py-40">
                                     <div className="grid justify-center items-center order-1 col-span-1">
-                                    <img className="lg:h-80 md:h-64 h-40 rounded-full" src={postData.edges[0].node.author.node.imageURL} alt="" />
+                                        <img className="lg:h-80 md:h-64 h-40 rounded-full" src={postData.edges[0].node.author.node.imageURL} alt={postData.edges[0].node.author.node.name} />
                                     </div>
                                     <div className="mt-8 md:mt-0 lg:justify-end col-span-2">
-                                    <h1 className="text-4xl text-gray-800 text-center md:text-left font-bold mb-6">Hi, I am John, Creative Technologist</h1>
-                                    <p className="text-xl text-gray-800 text-center md:text-left">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                                    <button className="block mt-8 mx-auto md:mx-0 text-2xl py-3 px-6 text-red-50 font-semibold rounded bg-red-400">Download Resume</button>
+                                        <h1 className="text-4xl text-gray-800 text-center md:text-left font-bold mb-0.5">{postData.edges[0].node.author.node.name}</h1>
+                                        <p className="text-2xl text-gray-800 text-center md:text-left mb-8">
+                                            <a href="https://rahulsam.me/">rahulsam.me</a>
+                                        </p>
+                                        <p className="text-xl text-gray-800 text-center md:text-left mb-8">
+                                        My interests lie in computer science (hence the career choice) and the humanities (hence creating REALM and pretty much everything else I do).
+                                        </p>
+                                        <a href="https://rahulsam.me/" className="md:w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-2 border-blue-500 hover:border-blue-500 hover:bg-blue-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">Follow&nbsp;<FontAwesomeIcon icon={faTwitter} id="twitter"/></a>
                                     </div>
                                 </div>
                                 <div className={blogStyles.postmeta}>
