@@ -157,7 +157,6 @@ export default function Author({ postData }) {
                 uri={postData.edges[0].node.uri}
             >
                 <div className={styles.container}>
-
                     <main className={styles.main}>
                         {router.isFallback ? (
                             <h2>Loading...</h2>
@@ -173,45 +172,55 @@ export default function Author({ postData }) {
                                             <a href="https://rahulsam.me/">rahulsam.me</a>
                                         </p>
                                         <p className="text-xl text-gray-800 text-center md:text-left mb-8">
-                                        My interests lie in computer science (hence the career choice) and the humanities (hence creating REALM and pretty much everything else I do).
+                                        I'm a software engineer by profession. My interests lie in computer science (hence the career choice) and the humanities (hence creating REALM and pretty much everything else I do).
                                         </p>
                                         <a href="https://rahulsam.me/" className="md:w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-2 border-blue-500 hover:border-blue-500 hover:bg-blue-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">Follow&nbsp;<FontAwesomeIcon icon={faTwitter} id="twitter"/></a>
                                     </div>
                                 </div>
-                                <div className={blogStyles.postmeta}>
-                                    <h1 className="font-bold text-3xl md:text-5xl tracking-tight mt-8 mb-4 text-black dark:text-white">
-                                        {postData.edges[0].node.title}
-                                    </h1>
-                                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
-                                        <div className="flex items-center">
-                                            <Image
-                                            alt={postData.edges[0].node.author.name}
-                                            height={24}
-                                            width={24}
-                                            src={postData.edges[0].node.author.node.imageURL}
-                                            className="rounded-full"
-                                            />
-                                            <p className="text-base text-gray-700 ml-1">
-                                                {postData.edges[0].node.author.name} {`/`} {format(parseISO(postData.edges[0].node.date), 'MMMM dd, yyyy')}
-                                            </p>
+                                <section className="container mx-auto w-4/6 mb-20">
+                                    <hr />
+                                    <main className="mt-10">
+                                        <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
+                                        <div className="w-3/3">
+                                            <Link href={`/blog/${postData.edges[0].node.slug}`}>
+                                            <a className="block rounded w-full lg:flex mb-10">
+                                                <div
+                                                className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-85"
+                                                style={{backgroundImage: `url(${postData.edges[0].node.extraPostInfo.thumbImage})`}}
+                                                title={postData.edges[0].node.title}
+                                                >
+                                                </div>
+                                                <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal">
+                                                <div
+                                                    className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2"
+                                                >
+                                                    {postData.edges[0].node.title}
+                                                </div>
+                                                <p
+                                                    className="text-gray-700 text-base"
+                                                >
+                                                    {postData.edges[0].node.extraPostInfo.authorExcerpt}
+                                                </p>
+                                                <Link href={`/user/author/${postData.edges[0].node.author.node.id}`}>
+                                                    <div className="flex mt-3">
+                                                    <img src={postData.edges[0].node.author.node.imageURL}
+                                                        className="h-10 w-10 rounded-full mr-2 object-cover" />
+                                                    <div>
+                                                        <p className="font-semibold text-gray-700 text-sm capitalize"> {postData.edges[0].node.author.node.name} </p>
+                                                        <p className="text-gray-600 text-xs">{format(parseISO((postData.edges[0].node.date).split('T')[0]), 'MMMM dd, yyyy')}</p>
+                                                    </div>
+                                                    </div>
+                                                </Link>
+                                                </div>
+                                            </a>
+                                            </Link>
                                         </div>
-                                    </div>
-                                    <img
-                                        className="mt-4"
-                                        src={postData.edges[0].node.author.node.imageURL}
-                                    />
-                                </div>
-                                {/* <div
-                                    className="blogPostBodyText"
-                                    dangerouslySetInnerHTML={{ __html: postData.content }}
-                                /> */}
+                                        </div>
+                                    </main>
+                                    <hr />
+                                </section>
                             </article>
                         )}
-                        <p>
-                            <Link href={`/blog`}>
-                                <a>Back</a>
-                            </Link>
-                        </p>
                     </main>
                 </div>
             </Layout>
