@@ -24,7 +24,7 @@ const Membership = () => {
                 </a>
               </div>
               <div className="m-3">
-                <a href="https://twitter.com/" title="Quicktoolz On Twitter"
+                <a href="https://twitter.com/" title="REALM On Twitter"
                   className="md:w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-2 border-blue-500 hover:border-blue-500 hover:bg-blue-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
                   <span className="mx-auto">Twitter</span>
                 </a>
