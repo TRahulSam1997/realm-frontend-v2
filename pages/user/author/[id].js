@@ -165,7 +165,7 @@ const result = (wpJSON, fbJSON) => {
     if (twitter) {
         wpJSON.edges[0].node.author.node['twitter'] = twitter;
     } else {
-        wpJSON.edges[0].node.author.node['twitter'] = '';
+        wpJSON.edges[0].node.author.node['twitter'] = 'http://twitter.com/';
     }
 
     const website = findKey(wpJSON.edges[0].node.author.node.id, fbJSON, 'website');
