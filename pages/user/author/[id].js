@@ -68,35 +68,36 @@ export default function Author({ postData }) {
                                 </div>
                                 <section className="container mx-auto w-4/6 mb-20">
                                     <hr />
-                                    <main className="mt-10">
-                                        <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
-                                        <div className="w-3/3">
-                                            <Link href={`/blog/${postData.edges[0].node.slug}`}>
+                                    {postData.edges.map(({ node }) => (
+                                    <main className="mt-10" key={node.id}>
+                                        <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10" key={node.id}>
+                                        <div className="w-3/3" key={node.id}>
+                                            <Link href={`/blog/${node.slug}`}>
                                             <a className="block rounded w-full lg:flex mb-10">
                                                 <div
                                                 className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-85"
-                                                style={{backgroundImage: `url(${postData.edges[0].node.extraPostInfo.thumbImage})`}}
-                                                title={postData.edges[0].node.title}
+                                                style={{backgroundImage: `url(${node.extraPostInfo.thumbImage})`}}
+                                                title={node.title}
                                                 >
                                                 </div>
                                                 <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal">
                                                 <div
                                                     className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2"
                                                 >
-                                                    {postData.edges[0].node.title}
+                                                    {node.title}
                                                 </div>
                                                 <p
                                                     className="text-gray-700 text-base"
                                                 >
-                                                    {postData.edges[0].node.extraPostInfo.authorExcerpt}
+                                                    {node.extraPostInfo.authorExcerpt}
                                                 </p>
-                                                <Link href={`/user/author/${postData.edges[0].node.author.node.id}`}>
+                                                <Link href={`/user/author/${node.author.node.id}`}>
                                                     <div className="flex mt-3">
-                                                    <img src={postData.edges[0].node.author.node.imageURL}
+                                                    <img src={node.author.node.imageURL}
                                                         className="h-10 w-10 rounded-full mr-2 object-cover" />
                                                     <div>
-                                                        <p className="font-semibold text-gray-700 text-sm capitalize"> {postData.edges[0].node.author.node.name} </p>
-                                                        <p className="text-gray-600 text-xs">{format(parseISO((postData.edges[0].node.date).split('T')[0]), 'MMMM dd, yyyy')}</p>
+                                                        <p className="font-semibold text-gray-700 text-sm capitalize"> {node.author.node.name} </p>
+                                                        <p className="text-gray-600 text-xs">{format(parseISO((node.date).split('T')[0]), 'MMMM dd, yyyy')}</p>
                                                     </div>
                                                     </div>
                                                 </Link>
@@ -106,6 +107,7 @@ export default function Author({ postData }) {
                                         </div>
                                         </div>
                                     </main>
+                                    ))}
                                     <hr />
                                 </section>
                             </article>
