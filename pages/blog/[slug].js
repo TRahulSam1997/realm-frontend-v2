@@ -180,7 +180,7 @@ export default function Post({ postData }) {
                                                 <Link href={`/user/author/${postData.author.node.id}`}>
                                                     {postData.author.node.name}
                                                 </Link>
-                                                {`/`}
+                                                {` / `}
                                                 {format(parseISO(postData.date), 'MMMM dd, yyyy')}
                                             </p>
                                         </div>
