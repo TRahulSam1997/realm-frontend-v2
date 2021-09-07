@@ -1,6 +1,6 @@
 # Front-end for REALM
 
-Front-end for [https://realmprojectau.com](https://realmprojectau.com/).
+Front-end for [https://realmprojectau.com](https://realmprojectau.com/)
 
 ***This is an ongoing project.***
 
