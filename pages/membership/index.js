@@ -18,25 +18,25 @@ const Membership = () => {
             </div>
             <div className="flex flex-wrap mt-10 justify-center">
               <div className="m-3">
-                <a href="https://www.facebook.com/REALM-111744604506248" title="Quicktoolz On Facebook"
+                <a href="https://www.facebook.com/REALM-111744604506248" target="_blank" title="REALM On Facebook"
                   className="md:w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-2 border-blue-600 hover:border-blue-600 hover:bg-blue-600 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
                   <span className="mx-auto">Facebook</span>
                 </a>
               </div>
               <div className="m-3">
-                <a href="https://twitter.com/" title="REALM On Twitter"
+                <a href="https://twitter.com/" target="_blank" title="REALM On Twitter"
                   className="md:w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-2 border-blue-500 hover:border-blue-500 hover:bg-blue-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
                   <span className="mx-auto">Twitter</span>
                 </a>
               </div>
               <div className="m-3">
-                <a href="https://www.instagram.com/realm.project/" title="Quicktoolz On Pinterest"
+                <a href="https://www.instagram.com/realm.project/" target="_blank" title="REALM On Pinterest"
                   className="md:w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-2 border-red-600 hover:border-red-600 hover:bg-red-600 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
                   <span className="mx-auto">Instagram</span>
                 </a>
               </div>
               <div className="m-3">
-                <a href="https://medium.com/@trahulsam/" title="Quicktoolz On Facebook"
+                <a href="https://medium.com/@trahulsam/" target="_blank" title="REALM On Facebook"
                   className="md:w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-2 border-black hover:border-orange-500 hover:bg-black hover:text-white shadow-md py-2 px-6 inline-flex items-center">
                   <span className="mx-auto">Medium</span>
                 </a>

@@ -71,32 +71,32 @@ export default function SocialIcons() {
                 <div id="social-test">
                     <ul className="social">
                         <li>
-                            <a href="https://www.facebook.com/REALM-111744604506248">
+                            <a href="https://www.facebook.com/REALM-111744604506248" target="_blank">
                                 <FontAwesomeIcon icon={faFacebook} id="facebook"/>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/realm.project/">
+                            <a href="https://www.instagram.com/realm.project/" target="_blank">
                                 <FontAwesomeIcon icon={faInstagram} id="instagram"/>
                             </a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/">
+                            <a href="https://twitter.com/" target="_blank">
                                 <FontAwesomeIcon icon={faTwitter} id="twitter"/>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/company/18713097/">
+                            <a href="https://www.linkedin.com/company/18713097/" target="_blank">
                                 <FontAwesomeIcon icon={faLinkedin} id="linkedin"/>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/channel/UCnY9ri6ix5qD74BiKZo-5rQ">
+                            <a href="https://www.youtube.com/channel/UCnY9ri6ix5qD74BiKZo-5rQ" target="_blank">
                                 <FontAwesomeIcon icon={faYoutube} id="youtube"/>
                             </a>
                         </li>
                         <li>
-                            <a href="https://medium.com/@trahulsam/">
+                            <a href="https://medium.com/@trahulsam/" target="_blank">
                                 <FontAwesomeIcon icon={faMedium} id="medium"/>
                             </a>
                         </li>
