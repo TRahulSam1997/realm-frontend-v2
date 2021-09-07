@@ -40,10 +40,10 @@ export default function Author({ postData }) {
     return (
         <Styles>
             <Layout
-                title={postData.edges[0].node.title}
-                description={postData.edges[0].node.extraPostInfo.authorExcerpt}
-                previewImage={postData.edges[0].node.extraPostInfo.previewImage}
-                uri={postData.edges[0].node.uri}
+                title={postData.edges[0].node.author.node.name}
+                description={postData.edges[0].node.author.node.bio}
+                previewImage={postData.edges[0].node.author.node.imageURL}
+                uri={`/user/author/${postData.edges[0].node.author.node.id}`}
             >
                 <div className={styles.container}>
                     <main className={styles.main}>
@@ -58,12 +58,12 @@ export default function Author({ postData }) {
                                     <div className="mt-8 md:mt-0 lg:justify-end col-span-2">
                                         <h1 className="text-4xl text-gray-800 text-center md:text-left font-bold mb-0.5">{postData.edges[0].node.author.node.name}</h1>
                                         <p className="text-2xl text-gray-800 text-center md:text-left mb-8" id="website">
-                                            <a href="https://rahulsam.me/">rahulsam.me</a>
+                                            <a href={postData.edges[0].node.author.node.website} target="_blank">{postData.edges[0].node.author.node.website}</a>
                                         </p>
                                         <p className="text-xl text-gray-800 text-center md:text-left mb-8">
                                             {postData.edges[0].node.author.node.bio}
                                         </p>
-                                        <a href="https://rahulsam.me/" className="md:w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-2 border-blue-500 hover:border-blue-500 hover:bg-blue-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">Follow&nbsp;<FontAwesomeIcon icon={faTwitter} id="twitter"/></a>
+                                        <a href={postData.edges[0].node.author.node.twitter} target="_blank" className="md:w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-2 border-blue-500 hover:border-blue-500 hover:bg-blue-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">Follow&nbsp;<FontAwesomeIcon icon={faTwitter} id="twitter"/></a>
                                     </div>
                                 </div>
                                 <section className="container mx-auto w-4/6 mb-20">
@@ -159,6 +159,20 @@ const result = (wpJSON, fbJSON) => {
         wpJSON.edges[0].node.author.node['bio'] = '';
     }
 
+    const twitter = findKey(wpJSON.edges[0].node.author.node.id, fbJSON, 'twitter');
+    if (twitter) {
+        wpJSON.edges[0].node.author.node['twitter'] = twitter;
+    } else {
+        wpJSON.edges[0].node.author.node['twitter'] = '';
+    }
+
+    const website = findKey(wpJSON.edges[0].node.author.node.id, fbJSON, 'website');
+    if (website) {
+        wpJSON.edges[0].node.author.node['website'] = website;
+    } else {
+        wpJSON.edges[0].node.author.node['website'] = '';
+    }
+
     return wpJSON;
 }
 
@@ -169,9 +183,6 @@ export async function getStaticProps({ params }) {
                 id: params.id
             }
         });
-
-    // console.log('value is ' + JSON.stringify(data.user.posts));
-    // console.log('value is ' + JSON.stringify(data));
 
     const users = await db.collection('users').orderBy('name').get();
     const usersData = users.docs.map(user => ({
