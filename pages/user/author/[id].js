@@ -156,7 +156,7 @@ const result = (wpJSON, fbJSON) => {
     if (bio) {
         wpJSON.edges[0].node.author.node['bio'] = bio;
     } else {
-        wpJSON.edges[0].node.author.node['bio'] = 'empty';
+        wpJSON.edges[0].node.author.node['bio'] = '';
     }
 
     return wpJSON;
