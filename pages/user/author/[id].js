@@ -93,7 +93,7 @@ export default function Author({ postData }) {
                                                 </p>
                                                 <Link href={`/user/author/${node.author.node.id}`}>
                                                     <div className="flex mt-3">
-                                                    <img src={node.author.node.imageURL}
+                                                    <img src={postData.edges[0].node.author.node.imageURL}
                                                         className="h-10 w-10 rounded-full mr-2 object-cover" />
                                                     <div>
                                                         <p className="font-semibold text-gray-700 text-sm capitalize"> {node.author.node.name} </p>
