@@ -85,6 +85,10 @@ const Styles = styled.div`
         .wp-block-image, figcaption, .wp-block-embed {
             display: table;
             margin: 0 auto;
+
+            .wp-block-embed__wrapper {
+                width: inherit;
+            }
         }
 
         figcaption {
