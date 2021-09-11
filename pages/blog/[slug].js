@@ -192,7 +192,7 @@ export default function Post({ postData }) {
                                             </div>
                                             <img
                                                 className="mt-4"
-                                                src={postData.featuredImage.node.sourceUrl}
+                                                src={postData.featuredImage?.node.sourceUrl}
                                             />
                                         </div>
                                         <div
