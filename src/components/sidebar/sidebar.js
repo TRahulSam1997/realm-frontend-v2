@@ -46,7 +46,7 @@ const SideBar = () => {
     return (
         <div className="h-62 flex border border-black rounded p-6 my-4 w-full dark:border-gray-800 bg-gray-900 dark:bg-blue-opaque">
           <div className="m-auto">
-            <p className="text-lg text-center lg:text-2xl 2xl:text-2xl font-bold text-gray-300 dark:text-gray-100">Subscribe to our Newsletter for More.</p>
+            <p className="text-lg text-center lg:text-2xl 2xl:text-2xl font-bold text-gray-300 dark:text-gray-100">Subscribe to our Newsletter for more</p>
             <form className="relative my-4" onSubmit={subscribe}>
             <input
                 placeholder="email"
