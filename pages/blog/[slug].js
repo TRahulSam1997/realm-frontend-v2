@@ -85,10 +85,7 @@ const Styles = styled.div`
         .wp-block-image, figcaption, .wp-block-embed {
             display: table;
             margin: 0 auto;
-
-            .wp-block-embed__wrapper {
-                width: inherit;
-            }
+            width: inherit;
         }
 
         figcaption {
@@ -159,53 +156,60 @@ export default function Post({ postData }) {
                 previewImage={postData.extraPostInfo.previewImage}
                 uri={postData.uri}
             >
-            <div className={styles.container}>
-                <main className={styles.main}>
-                    {router.isFallback ? (
-                        <h2>Loading...</h2>
-                    ) : (
-                        <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
-                            <div className={blogStyles.postmeta}>
-                                <h1 className="font-bold text-3xl md:text-5xl tracking-tight mt-8 mb-4 text-black dark:text-white">
-                                    {postData.title}
-                                </h1>
-                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
-                                    <div className="flex items-center">
-                                        <Link href={`/user/author/${postData.author.node.id}`}>
-                                            <Image
-                                            alt={postData.author.node.name}
-                                            height={24}
-                                            width={24}
-                                            src={postData.author.node.imageURL}
-                                            className="rounded-full"
-                                            />
-                                        </Link>
-                                        <p className="text-base text-gray-700 ml-1">
-                                            <Link href={`/user/author/${postData.author.node.id}`}>
-                                                {postData.author.node.name}
-                                            </Link>
-                                            {` / `}
-                                            {format(parseISO(postData.date), 'MMMM dd, yyyy')}
-                                        </p>
+            <div className="flex justify-center">
+                <div className="w-9/12">
+                    <div className={styles.container}>
+                        <main className={styles.main}>
+                            {router.isFallback ? (
+                                <h2>Loading...</h2>
+                            ) : (
+                                <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
+                                    <div className={blogStyles.postmeta}>
+                                        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mt-8 mb-4 text-black dark:text-white">
+                                            {postData.title}
+                                        </h1>
+                                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
+                                            <div className="flex items-center">
+                                                <Link href={`/user/author/${postData.author.node.id}`}>
+                                                    <Image
+                                                    alt={postData.author.node.name}
+                                                    height={24}
+                                                    width={24}
+                                                    src={postData.author.node.imageURL}
+                                                    className="rounded-full"
+                                                    />
+                                                </Link>
+                                                <p className="text-base text-gray-700 ml-1">
+                                                    <Link href={`/user/author/${postData.author.node.id}`}>
+                                                        {postData.author.node.name}
+                                                    </Link>
+                                                    {` / `}
+                                                    {format(parseISO(postData.date), 'MMMM dd, yyyy')}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <img
+                                            className="mt-4"
+                                            src={postData.featuredImage?.node.sourceUrl}
+                                        />
                                     </div>
-                                </div>
-                                <img
-                                    className="mt-4"
-                                    src={postData.featuredImage?.node.sourceUrl}
-                                />
-                            </div>
-                            <div
-                                className="blogPostBodyText"
-                                dangerouslySetInnerHTML={{ __html: postData.content }}
-                            />
-                            <p className="bg-white hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                                <Link href={`/blog`}>
-                                    <a>Back</a>
-                                </Link>
-                            </p>
-                        </article>
-                    )}
-                </main>
+                                    <div
+                                        className="blogPostBodyText"
+                                        dangerouslySetInnerHTML={{ __html: postData.content }}
+                                    />
+                                    <p className="bg-white hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                                        <Link href={`/blog`}>
+                                            <a>Back</a>
+                                        </Link>
+                                    </p>
+                                </article>
+                            )}
+                        </main>
+                    </div>
+                </div>
+                <div className="h-screen sticky top-0 w-3/12 hidden md:block mr-36">
+                    <SideBar />
+                </div>
             </div>
             </Layout>
         </Styles>
