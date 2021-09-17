@@ -88,7 +88,7 @@ const Styles = styled.div`
             padding-bottom: 56.25%;
             height: 0;
         }
-        
+
         .iframe-container iframe{
             position: absolute;
             top:0;
@@ -170,6 +170,7 @@ export default function Post({ postData }) {
                 description={postData.extraPostInfo.authorExcerpt}
                 previewImage={postData.extraPostInfo.previewImage}
                 uri={postData.uri}
+                canonical={postData.extraPostInfo.canonical || postData.uri}
             >
             <div className="flex justify-center">
                 <div className="w-9/12">

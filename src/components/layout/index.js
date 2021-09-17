@@ -6,7 +6,8 @@ const Layout = ({children,
                 title,
                 description,
                 previewImage,
-                uri
+                uri,
+                canonical
             }) => {
     return (
         <div>
@@ -17,6 +18,7 @@ const Layout = ({children,
                 <meta charSet="utf-8" />
                 <meta name="description" content={description || 'REALM'} />
                 <link rel='icon' href='https://res.cloudinary.com/dkd4xa60a/image/upload/v1618225098/REALM/logo192_mxoxsc.jpg' />
+                <link rel="canonical" href={canonical || 'https://realmprojectau.com/'} />
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
