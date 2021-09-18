@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import LoadingSpinner from '../email/LoadingSpinner';
 import SuccessMessage from '../email/SuccessMessage';
 import ErrorMessage from '../email/ErrorMessage';
+import ShareButtons from '../share/share';
 
 const SideBar = () => {
 
@@ -73,6 +74,7 @@ const SideBar = () => {
             ) : (null)}
 
           </div>
+          <ShareButtons title='test' url='test.com' twitterHandle='test' tags='test' />
     </div>
     )
 }
