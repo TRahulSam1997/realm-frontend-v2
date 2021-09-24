@@ -29,6 +29,7 @@ const Layout = ({children,
 
                 {/* Open Graph / Facebook */}
                 <meta property="og:url" content={uri || 'https://realmprojectau.com/'} />
+                <meta property="og:type" content={'blog.post'} />
                 <meta property="og:image" content={previewImage || 'https://res.cloudinary.com/dkd4xa60a/image/upload/v1618225098/REALM/logo192_mxoxsc.jpg'} />
                 <meta property="og:site_name" content="REALM" />
                 <meta property="og:title" content={title || 'REALM'} />
