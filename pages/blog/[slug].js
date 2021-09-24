@@ -224,7 +224,12 @@ export default function Post({ postData }) {
                     </div>
                 </div>
                 <div className="h-screen sticky top-0 w-3/12 hidden md:block mr-36">
-                    <SideBar />
+                    <SideBar
+                        url={`https://realmprojectau.com/blog${postData.uri}`}
+                        imageurl={postData.extraPostInfo.previewImage}
+                        title={postData.title}
+                        quote={postData.extraPostInfo.authorExcerpt}
+                    />
                 </div>
             </div>
             </Layout>

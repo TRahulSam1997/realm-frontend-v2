@@ -4,7 +4,7 @@ import SuccessMessage from '../email/SuccessMessage';
 import ErrorMessage from '../email/ErrorMessage';
 import ShareButtons from '../share/share';
 
-const SideBar = () => {
+const SideBar = ({title, url, imageurl, quote}) => {
 
     const inputEl = useRef(null);
     const [form, setForm] = useState(false);
@@ -75,7 +75,14 @@ const SideBar = () => {
 
           </div>
           <div className="m-auto">
-            <ShareButtons title='test' url='test.com' twitterHandle='test' tags='test' />
+            <ShareButtons
+              title={title}
+              url={url}
+              twitterHandle='realmproject'
+              tags={['realm']}
+              imageurl={imageurl}
+              quote={quote}
+            />
           </div>
         </div>
     )
