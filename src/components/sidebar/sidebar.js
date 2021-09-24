@@ -45,7 +45,7 @@ const SideBar = () => {
       };
 
     return (
-        <div className="h-62 flex border border-black rounded p-6 my-4 w-full dark:border-gray-800 bg-gray-900 dark:bg-blue-opaque">
+        <div className="h-62 flex flex-col border border-black rounded p-6 my-4 w-full dark:border-gray-800 bg-gray-900 dark:bg-blue-opaque">
           <div className="m-auto">
             <p className="text-lg text-center lg:text-2xl 2xl:text-2xl font-bold text-gray-300 dark:text-gray-100">Enjoying this essay?</p>
             <p className="text-lg text-left lg:text-lg 2xl:text-2xl text-gray-300 dark:text-gray-100">Subscribe to our Newsletter for similar content on the humanities, virtue & living truthfully.</p>
@@ -74,8 +74,10 @@ const SideBar = () => {
             ) : (null)}
 
           </div>
-          <ShareButtons title='test' url='test.com' twitterHandle='test' tags='test' />
-    </div>
+          <div className="m-auto">
+            <ShareButtons title='test' url='test.com' twitterHandle='test' tags='test' />
+          </div>
+        </div>
     )
 }
 
