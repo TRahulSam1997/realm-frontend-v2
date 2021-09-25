@@ -170,7 +170,7 @@ export default function Post({ postData }) {
                 description={postData.extraPostInfo.authorExcerpt}
                 previewImage={postData.extraPostInfo.previewImage}
                 uri={postData.uri}
-                canonical={postData.extraPostInfo.canonical || `blog${postData.uri}`}
+                canonical={postData.extraPostInfo.canonical}
             >
             <div className="flex justify-center">
                 <div className="w-9/12">
