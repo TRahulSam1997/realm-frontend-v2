@@ -17,7 +17,7 @@ const Styles = styled.div`
     .blogPostBodyText {
         width: 100%;
         display: block;
-        font-size: 19px;
+        font-size: 1.1875em;
         text-align: left;
         text-justify: inter-word;
         padding-top: 0.6em;
@@ -142,6 +142,19 @@ const Styles = styled.div`
           :hover {
             color: blue;
           }
+        }
+
+        .has-extra-small-font-size {
+            margin-top: 0.2em;
+            margin-bottom: 0.2em;
+            em {
+                font-size: 0.8em;
+            }
+        }
+
+        .has-text-align-center {
+            text-align: center;
+            font-weight: bold;
         }
 
     }
