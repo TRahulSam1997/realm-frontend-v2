@@ -31,7 +31,7 @@ export default function index() {
                 </a>
               </div>
               <div className="m-3">
-                <a href="https://medium.com/@trahulsam/" target="_blank" title="REALM On Facebook"
+                <a href="https://podcastindex.org/podcast/4985698" target="_blank" title="REALM On Facebook"
                   className="md:w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-2 border-black hover:border-orange-500 hover:bg-black hover:text-white shadow-md py-2 px-6 inline-flex items-center">
                   <span className="mx-auto">P. Index</span>
                 </a>
