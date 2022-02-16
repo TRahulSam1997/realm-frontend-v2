@@ -19,7 +19,7 @@ export default function index() {
                 </a>
               </div>
               <div className="m-3">
-                <a href="https://twitter.com/" target="_blank" title="REALM On Twitter"
+                <a href="https://open.spotify.com/show/4ryEqjut4r6SMtfxLdM1Le" target="_blank" title="REALM On Twitter"
                   className="md:w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-2 border-green-500 hover:border-green-500 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
                   <span className="mx-auto">Spotify</span>
                 </a>
